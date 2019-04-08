@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'RouteController@returnWelcome');
+
+Route::get('students/login', 'RouteController@returnLogin');
+
+Route::get('students/register', 'RouteController@returnRegister');
+
+Route::post('students/register', 'RegisterController@doStudentRegister');
+
+Route::group(['prefix' => 'students'], function() {
+	
 });
