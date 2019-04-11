@@ -22,6 +22,7 @@ class RegistrationInformation extends Model
         'max_credits',
         'admin_id',
         'department_id',
+        'semester_id',
     ];
 
     public function getGeneration()
@@ -57,5 +58,10 @@ class RegistrationInformation extends Model
             'registration_information_id',
             'subject_id'
         );
+    }
+
+    public function getSemester()
+    {
+        return $this->belongsTo('App\Semester', 'semester_id', 'id');
     }
 }

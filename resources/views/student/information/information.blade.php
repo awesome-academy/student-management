@@ -17,7 +17,7 @@
         <div>
             @if (isset($student))
                 @if (!empty($student->avatar))
-                    <img src="{{ config('social.student-img') . $student->avatar }}" alt="" class="img-thumbnail">
+                    <img src="{{ config('social.student-img') . $student->avatar }}" alt="" class="img-thumbnail avatar-size">
                 @else
                     <img src="{{ config('social.student-default-img') }}" alt="" class="img-thumbnail avatar-size">
                     <div class="alert alert-danger avatar-arlert-size">

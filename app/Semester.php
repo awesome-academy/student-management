@@ -1,4 +1,4 @@
-S<?php
+<?php
 
 namespace App;
 
@@ -9,10 +9,13 @@ class Semester extends Model
     //
     protected $table = 'semesters';
     public $timestamp = false;
-
-    public function getClass()
-    {
-        return $this->hasMany('App\Sclass');
-    }
+    const UPDATED_AT = null;
+    const CREATED_AT = null;
+    protected $fillable = [
+        'id',
+        'name',
+        'begin_date',
+        'finish_date',
+    ];
 
 }

@@ -13,20 +13,25 @@ $(document).ready(function() {
                 data: { 'value':value },
                 dataType: 'json',
                 success: function (data) {
-                    var str = '';
-                    $.each(data, function(key, value){
-                        str += "<tr>";
-                        str += "<td><input type='radio' name='radio' value='" + value.id_class + "'></td>";
-                        str += "<td>" + value.subject  + "</td>";
-                        str += "<td>" + value.group + "</td>";
-                        str += "<td>" + value.teacher + "</td>";
-                        str += "<td>" + value.room + "</td>";
-                        str += "<td>" +value.registered + "/" + value.size + "</td>";
-                        str += "<td>" + value.lesson + "</td>";
-                        str += "<td>" + value.day + "</td>";
-                        str += "</tr>";
-                    });
-                    $("#tableBody").html(str);
+                    if (data != null) {
+                        var str = '';
+                        $.each(data, function(key, value){
+                            str += "<tr>";
+                            str += "<td><input type='radio' name='radio' value='" + value.id_class + "'></td>";
+                            str += "<td>" + value.subject  + "</td>";
+                            str += "<td>" + value.group + "</td>";
+                            str += "<td>" + value.teacher + "</td>";
+                            str += "<td>" + value.room + "</td>";
+                            str += "<td>" +value.registered + "/" + value.size + "</td>";
+                            str += "<td>" + value.lesson + "</td>";
+                            str += "<td>" + value.day + "</td>";
+                            str += "</tr>";
+                        });
+                        $("#tableBody").html(str);
+                    } else {
+                        alert("error");
+                    }
+                    
                 },
                 error: function (e) {
                     alert("error");

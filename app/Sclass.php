@@ -20,7 +20,6 @@ class Sclass extends Model
         'subject_id',
         'registration_information_id',
         'lesson_id',
-        'semester_id',
         'day_id',
     ];
 
@@ -37,11 +36,6 @@ class Sclass extends Model
     public function getDay()
     {
         return $this->belongsTo('App\Day', 'day_id', 'id');
-    }
-
-    public function getSemester()
-    {
-        return $this->belongsTo('App\Semester');
     }
 
     public function getRegistrationInformation()

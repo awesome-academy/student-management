@@ -46,7 +46,9 @@
                     <select class="custom-select" id="subjectSelect">
                         <option value="" selected>{{ __('lang.select') }}</option>
                         @foreach ($subjects as $subject)
-                            <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                            <option value="{{ $subject->id }}">
+                                {{ $subject->name }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
@@ -83,6 +85,7 @@
             </div>
             <div>
                 <form action="{{ route('students.cancel_registration', ['id' => $registration->id]) }}" method="GET">
+                    @csrf
                     <table class="table table-style">
                         <caption>{{ __('lang.class_list') }}</caption>
                         <thead class="thead-red">

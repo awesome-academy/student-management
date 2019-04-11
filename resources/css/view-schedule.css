@@ -1,0 +1,21 @@
+.text-color-red {
+    color: #bd5d38;
+}
+.schedule-table-size {
+    width: 1500px;
+    text-align: center;
+    table-layout: fixed;
+}
+.row-title-color {
+    background-color: #bd5d38;
+    color: white;
+}
+.schedule-row-height {
+    height: 90px;
+}
+.item-noData-display {
+    background-color: #eaeae8;
+}
+.item-hadData-display {
+    background-color: #8cf2ee;
+}

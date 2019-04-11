@@ -25,7 +25,7 @@ class SubjectRegistration extends Model
 
     public function getRegistrationInformation()
     {
-        return $this->belongsTo('App\RegistrationInformation');
+        return $this->belongsTo('App\RegistrationInformation', 'registration_information_id', 'id');
     }
 
     public function getClass()
