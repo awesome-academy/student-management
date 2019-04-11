@@ -9,9 +9,9 @@
 
     <title>@yield('title')</title>
     
-    <link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('bower_components/css/index') }}" rel="stylesheet">
-    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link href="{{ config('social.bootstrap') }}" rel="stylesheet">
+    <link href="{{ config('social.index') }}" rel="stylesheet">
+    <link href="{{ config('social.home-css') }}" rel="stylesheet">
     
 </head>
 
@@ -19,8 +19,15 @@
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
         <a class="navbar-brand js-scroll-trigger" href="{{ route('students.return_home') }}">
-            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ asset('/student_img/4_7.jpg') }}"
-            alt="">
+            @if (isset($student))
+                @if (!empty($student->avatar))
+                    <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                    src="{{ config('social.student-img') . $student->avatar }}" alt="avatar">
+                @else
+                    <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                    src="{{ config('social.student-img') }}default_avatar.jpg" alt="avatar">
+                @endif
+            @endif
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -30,7 +37,8 @@
                         {{ __('lang.information') }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">{{ __('lang.update_information') }}</a>
+                        <a class="dropdown-item" href="{{ route('students.return_information') }}">{{ __('lang.check_information') }}</a>
+                        <a class="dropdown-item" href="{{ route('students.return_update_information') }}">{{ __('lang.update_information') }}</a>
                     </div>
                 </li>
                 <li class="nav-item" id="register">
@@ -47,9 +55,9 @@
         @yield('content')
     </div>
 
-    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/home.js') }}"></script>
+    <script src="{{ config('social.jquery') }}"></script>
+    <script src="{{ config('social.bootstrap-bundle') }}"></script>
+    <script src="{{ config('social.home-js') }}"></script>
     
 </body>
 

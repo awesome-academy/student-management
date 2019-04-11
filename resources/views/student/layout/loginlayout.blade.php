@@ -9,8 +9,8 @@
 
     <title>@yield('title')</title>
 
-    <link href="{{ asset('bower_components/Font-Awesome/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ config('social.all-min-css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ config('social.app-css') }}" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -25,9 +25,10 @@
         </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('bower_components/boostrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+
+    <script src="{{ config('social.jquery') }}"></script>
+    <script src="{{ config('social.bootstrap-bundle') }}"></script>
+    <script src="{{ config('social.home-js') }}"></script>
 
 </body>
 

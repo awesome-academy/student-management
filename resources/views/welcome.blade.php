@@ -18,7 +18,6 @@
                 <div class="links">
                     <a href="">{{ trans('lang.welcome_admin') }}</a>
                     <a href="{{ route('students.return_home') }}">{{ trans('lang.welcome_student') }}</a>
-                    
                 </div>
             </div>
         </div>
