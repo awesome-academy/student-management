@@ -8,6 +8,21 @@ class Sclass extends Model
 {
     protected $table = 'classes';
     public $timestamp = false;
+    const UPDATED_AT = null;
+    const CREATED_AT = null;
+    protected $fillable = [
+        'id',
+        'teacher',
+        'class_group',
+        'class_room',
+        'size',
+        'registered',
+        'subject_id',
+        'registration_information_id',
+        'lesson_id',
+        'semester_id',
+        'day_id',
+    ];
 
     public function getSubject()
     {
@@ -31,7 +46,11 @@ class Sclass extends Model
 
     public function getRegistrationInformation()
     {
-        return $this->belongsTo('App\RegistrationInformation', 'registration_information_id', 'id');
+        return $this->belongsTo(
+            'App\RegistrationInformation',
+            'registration_information_id',
+            'id'
+        );
     }
 
     public function getSubjectRegistration ()

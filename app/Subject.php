@@ -9,6 +9,15 @@ class Subject extends Model
     //
     protected $table = 'subjects';
     public $timestamp = false;
+    const UPDATED_AT = null;
+    const CREATED_AT = null;
+    protected $fillable = [
+        'id',
+        'name',
+        'credits',
+        'lessons',
+        'rate_point_id',
+    ];
 
     public function getRatePoint()
     {
@@ -27,8 +36,12 @@ class Subject extends Model
 
     public function getRegistrationInformation()
     {
-        return $this->belongsToMany('App\RegistrationInformation', 'registration_information_subject', 'subject_id',
-            'registration_information_id');
+        return $this->belongsToMany(
+            'App\RegistrationInformation',
+            'registration_information_subject',
+            'subject_id',
+            'registration_information_id'
+        );
     }
 
 }

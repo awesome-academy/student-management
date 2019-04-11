@@ -9,6 +9,20 @@ class RegistrationInformation extends Model
     //
     protected $table = 'registration_information';
     public $timestamp = false;
+    const UPDATED_AT = null;
+    const CREATED_AT = null;
+    protected $fillable = [
+        'id',
+        'status',
+        'time_begin',
+        'date_begin',
+        'time_finish',
+        'date_finish',
+        'min_credits',
+        'max_credits',
+        'admin_id',
+        'department_id',
+    ];
 
     public function getGeneration()
     {
