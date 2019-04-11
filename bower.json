@@ -17,6 +17,7 @@
     "dependencies": {
         "Font-Awesome": "https://github.com/FortAwesome/Font-Awesome.git#^5.8.1",
         "bootstrap": "https://github.com/twbs/bootstrap.git#^4.3.1",
-        "jquery": "https://github.com/jquery/jquery.git#^3.4.0"
+        "jquery": "https://github.com/jquery/jquery.git#^3.4.0",
+        "css": "https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i"
     }
 }
