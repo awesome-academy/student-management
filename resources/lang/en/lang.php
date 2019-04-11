@@ -114,4 +114,22 @@
         //
         'next-monday' => 'next Monday',
         'next-sunday' => 'next Sunday',
+        //
+        'point_table' => 'Point table',
+        'non_subject_to_show' => "You haven't studied any subject",
+        // Phần trăm điểm thành phần
+        'CC_percent' => '% CC',
+        'KT_percent' => '$ KT',
+        'T_percent' => '% Exam',
+        // Điểm thành phần
+        'attendence_point' => 'Attencence point',
+        'test_point' => 'Exam point',
+        'final_exam_point' => 'Final exam point',
+        'final_point' => 'Final point',
+        //
+        'status' => 'Status',
+        'pass_subject' => 'Pass',
+        'fail_subject' => 'Fail',
+        'none' => 'None',
+        'in_progress' => 'In progress',
     ];

@@ -47,7 +47,7 @@ class Sclass extends Model
         );
     }
 
-    public function getSubjectRegistration ()
+    public function getSubjectRegistration()
     {
         return $this->belongsToMany(
             'App\SubjectRegistration',
@@ -55,5 +55,10 @@ class Sclass extends Model
             'class_id',
             'subject_registration_id'
         );
+    }
+
+    public function getTranscript()
+    {
+        return $this->hasMany('App\Transcript', 'class_id', 'id');
     }
 }

@@ -12,6 +12,7 @@ use App\SubjectRegistration;
 use App\Semester;
 use App\Lesson;
 use App\Day;
+
 class RouteController extends Controller
 {
     public function returnWelcome()
@@ -173,6 +174,29 @@ class RouteController extends Controller
 
     public function returnPoint()
     {
-        return view('student/point');
+        $user = Auth::User();
+        $student = Student::findOrFail($user->student_id);
+        $subject_registration = SubjectRegistration::where('student_id', $student->id)
+        ->orderBy('id', 'desc')->get();
+        if (!empty($subject_registration)) {
+            foreach ($subject_registration as $sr) {
+                $semester = $sr->getRegistrationInformation()
+                    ->firstOrFail()
+                    ->getSemester()
+                    ->firstOrFail();
+                $classes = $sr->getClass()->get();
+                $data[] = array(
+                    'semester' => $semester,
+                    'classes' => $classes
+                );
+            }
+
+            return view('student/point')->with('data', $data);
+            
+
+        } else {
+            return view('student/point')->with('fail', __('lang.non_subject_to_show'));
+        }
     }
+    
 }

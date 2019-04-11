@@ -10,14 +10,14 @@ class Transcript extends Model
     protected $table = 'transcripts';
     public $timestamp = false;
 
-    public function getStudents()
+    public function getStudent()
     {
-        return $this->belongsTo('App\Student');
+        return $this->belongsTo('App\Student', 'student_id', 'id');
     }
 
-    public function getSubject()
+    public function getClass()
     {
-        return $this->belongsTo('App\Subject');
+        return $this->belongsTo('App\Sclass', 'class_id', 'id');
     }
     
 }
