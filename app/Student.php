@@ -37,6 +37,6 @@ class Student extends Model
     
     public function getUser()
     {
-        return $this->hasOne('App\User');
+        return $this->hasOne('App\User', 'student_id', 'id');
     }
 }
