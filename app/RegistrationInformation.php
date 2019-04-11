@@ -46,7 +46,7 @@ class RegistrationInformation extends Model
 
     public function getClass()
     {
-        return $this->hasMany('App\Class');
+        return $this->hasMany('AppSclass');
     }
 
     public function getSubject()

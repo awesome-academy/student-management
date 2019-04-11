@@ -12,7 +12,7 @@ class Semester extends Model
 
     public function getClass()
     {
-        return $this->hasMany('App\Class');
+        return $this->hasMany('App\Sclass');
     }
 
 }

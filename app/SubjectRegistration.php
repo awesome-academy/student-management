@@ -30,7 +30,7 @@ class SubjectRegistration extends Model
 
     public function getClass()
     {
-        return $this->belongsToMany('App\Class', 'class_subject_registration', 'subject_registration_id', 'class_id');
+        return $this->belongsToMany('App\Sclass', 'class_subject_registration', 'subject_registration_id', 'class_id');
     }
 
 }

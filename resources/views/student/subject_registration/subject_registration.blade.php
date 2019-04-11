@@ -78,26 +78,55 @@
 
             </div>
             <div>
-                <table class="table table-style">
+                <form action="{{ route('students.cancel_registration', ['id' => $registration->id]) }}" method="GET">
+                    <table class="table table-style">
                         <caption>{{ __('lang.class_list') }}</caption>
                         <thead class="thead-red">
                             <tr>
+                                <th></th>
                                 <th scope="col">{{ __('lang.ordinal_number') }}</th>
                                 <th scope="col">{{ __('lang.subject') }}</th>
                                 <th scope="col">{{ __('lang.class_group') }}</th>
                                 <th scope="col">{{ __('lang.teacher') }}</th>
                                 <th scope="col">{{ __('lang.credit') }}</th>
-                                <th scope="col"></th>
+                                <th scope="col">{{ __('lang.lessons') }}</th>
                             </tr>
                         </thead>
+                            
                         <tbody>
+                            @if ($registeredClasses != null)
+                                @foreach ($registeredClasses as $class)
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="classCheckbox[]"
+                                            value="{{ $class->id }}">
+                                        </td>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $class->getSubject()->first()->name }}</td>
+                                        <td>{{ $class->class_group }}</td>
+                                        <td>{{ $class->teacher }}</td>
+                                        <td>{{ $class->getSubject()->first()->credits }}</td>
+                                        <td>{{ $class->getSubject()->first()->lessons }}</td>
+                                    </tr>
+                                    @endforeach
                                     
-                        </tbody>                    
+                                @endif       
+                            </tbody>                    
                     </table>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary background-red ">
+                            {{ __('lang.cancel_registration') }}
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="d-flex justify-content-center">
-                
-            </div>
+            <br>
+            @if ($subjectRegistration != null)
+                <div class="d-flex justify-content-center">
+                    <h5>{{ __('lang.total_credit') }}: {{ $subjectRegistration->total_credit }}</h5>
+                </div>
+             @endif
+             <br>
         @endif
     </div>
 

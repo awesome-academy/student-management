@@ -8,6 +8,7 @@ use App\User;
 use App\Student;
 use App\RegistrationInformation;
 use App\Subject;
+use App\SubjectRegistration;
 
 class RouteController extends Controller
 {
@@ -77,11 +78,21 @@ class RouteController extends Controller
                         }
                         if ($boo) {
                             $subjects = $registration->getSubject()->get();
-                                
+                            $subjectRegistration = SubjectRegistration::
+                                where('student_id', $student->id)
+                                ->where('registration_information_id', $registration->id)
+                                ->first();
+                            $registeredClasses = null;
+                            if (!empty($subjectRegistration)) {
+                                $registeredClasses = $subjectRegistration->getClass()->get();
+                            }
+
                             return view('student/subject_registration/subject_registration')
                             ->with([
                                 'registration' => $registration,
                                 'subjects' => $subjects,
+                                'subjectRegistration' => $subjectRegistration,
+                                'registeredClasses' => $registeredClasses,
                             ]);
                         } else {
                             return view('student/subject_registration/subject_registration')
