@@ -12,8 +12,12 @@ class RegistrationInformation extends Model
 
     public function getGeneration()
     {
-        return $this->belongsToMany('App\Generations', 'generation_registration_information', 'registration_information_id',
-            'generation_id');
+    	return $this->belongsToMany(
+            'App\Generation',
+            'generation_registration_information',
+            'registration_information_id',
+            'generation_id'
+        );
     }
 
     public function getDepartment()
@@ -33,7 +37,11 @@ class RegistrationInformation extends Model
 
     public function getSubject()
     {
-        return $this->belongsToMany('App\Subject', 'registration_information_subject', 'registration_information_id',
-            'subject_id');
+        return $this->belongsToMany(
+            'App\Subject',
+            'registration_information_subject',
+            'registration_information_id',
+            'subject_id'
+        );
     }
 }

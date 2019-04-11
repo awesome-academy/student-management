@@ -1,0 +1,25 @@
+.font-size-14 {
+    font-size: 14px;
+}
+.width-40 {
+    width: 40%;
+}
+.thead-red {
+    background-color: #bd5d38;
+    color: white;
+}
+.table-style {
+	border-collapse: separate;
+}
+.table-style tbody tr:hover {
+    background-color: #C0C0C0;
+}
+.table-style caption {
+    font-size: 20px;
+    color: #bd5d38;
+    caption-side: top;
+    text-align: center;
+}
+.background-red {
+    background-color: #bd5d38;
+}
