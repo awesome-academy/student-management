@@ -41,4 +41,11 @@
         'current_address' => 'Địa chỉ hiện tại',
         'generation' => 'Khóa',
         'department' => 'Khoa đào tạo',
+        'change_avatar' => 'Đổi ảnh đại diện',
+        'avatar' => 'Ảnh đại diện',
+        'error_file' => 'File không phù hợp',
+        'phone_max' => 'Số điện thoại không được quá 15 ký tự',
+        'current_address_max' => 'Địa chỉ hiện tại không được quá 50 ký tự',
+        'update_success' => 'Cập nhật thành công',
+        'update_fail' => 'Cập nhật thất bại',
     ];

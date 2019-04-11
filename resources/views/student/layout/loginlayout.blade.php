@@ -29,6 +29,7 @@
     <script src="{{ config('social.jquery') }}"></script>
     <script src="{{ config('social.bootstrap-bundle') }}"></script>
     <script src="{{ config('social.home-js') }}"></script>
+    <script src="{{ config('social.app-js') }}"></script>
 
 </body>
 

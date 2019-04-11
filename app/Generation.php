@@ -12,7 +12,7 @@ class Generation extends Model
 
     public function getStudent()
     {
-        return $this->hasMany('App\Student');
+    	return $this->hasMany('App\Student', 'generations_id', 'id');
     }
 
     public function getRegistrationInformation()
