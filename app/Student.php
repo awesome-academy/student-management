@@ -32,7 +32,11 @@ class Student extends Model
 
     public function getSubjectRegistration()
     {
-    	return this->hasMany('app/SubjectRegistration', 'student_id', 'id');
+    	return $this->hasMany('app/SubjectRegistration', 'student_id', 'id');
     }
     
+    public function getUser()
+    {
+        return $this->hasOne('app/User');
+    }
 }
