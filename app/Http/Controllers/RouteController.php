@@ -116,4 +116,9 @@ class RouteController extends Controller
         }
     }
 
+    public function returnRegistrationInstruction()
+    {
+        return view('student/subject_registration/registration_instruction');
+    }
+
 }

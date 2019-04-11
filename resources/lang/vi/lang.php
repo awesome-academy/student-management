@@ -79,4 +79,7 @@
         'cancel_registration_success' => 'Hủy môn học thành công',
         'fail_to_cancel_registration' => 'Hủy môn học thất bại',
         'total_credit' => 'Tổng số tín chỉ',
+        'instruction_video' => 'Video dưới đây sẽ hướng dẫn bạn cách đăng ký môn học',
+        'click_below_link' => 'Nhấn đường link bên dưới để xem tài liệu hưóng dẫn',
+        'instruction_document' => 'Tài liệu hướng dẫn',
     ];

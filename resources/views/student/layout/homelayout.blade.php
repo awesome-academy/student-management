@@ -55,7 +55,7 @@
                         <a class="dropdown-item" href="{{ route('students.return_subject_registration') }}">
                             {{ __('lang.register') }}
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ route('students.registration-instruction') }}">
                             {{ __('lang.registration_instructions') }}
                         </a>
                     </div>

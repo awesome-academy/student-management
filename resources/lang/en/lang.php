@@ -79,4 +79,7 @@
         'cancel_registration_success' => 'Cancel registration successfully',
         'fail_to_cancel_registration' => 'Fail to cancel registration',
         'total_credit' => 'Total credits',
+        'instruction_video' => 'The video below will help you know how to register subject',
+        'click_below_link' => 'Click below link to view instruction document',
+        'instruction_document' => 'Instruction document',
     ];
