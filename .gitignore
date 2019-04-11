@@ -12,3 +12,5 @@ yarn-error.log
 /public/bower_components
 /public/css
 /public/js
+/public/student_img
+/public/admin_img

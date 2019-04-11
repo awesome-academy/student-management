@@ -16,8 +16,8 @@
                     {{ trans('lang.welcome_content') }}
                 </div>
                 <div class="links">
-                    <a href="admins/login">{{ trans('lang.welcome_admin') }}</a>
-                    <a href="students/login">{{ trans('lang.welcome_student') }}</a>
+                    <a href="">{{ trans('lang.welcome_admin') }}</a>
+                    <a href="{{ route('students.return_home') }}">{{ trans('lang.welcome_student') }}</a>
                     
                 </div>
             </div>
