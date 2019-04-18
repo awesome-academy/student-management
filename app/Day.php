@@ -12,6 +12,6 @@ class Day extends Model
 
     public function getClass()
     {
-    	return $this->hasMany('app/Class', 'day_id', 'id');
+        return $this->hasMany('app/Class', 'day_id', 'id');
     }
 }

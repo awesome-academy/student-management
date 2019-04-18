@@ -12,12 +12,12 @@ class Transcript extends Model
 
     public function getStudents()
     {
-    	return $this->belongsTo('app/Student', 'student_id', 'id');
+        return $this->belongsTo('app/Student', 'student_id', 'id');
     }
 
     public function getSubject()
     {
-    	return $this->belongsTo('app/Subject', 'subject_id', 'id');
+        return $this->belongsTo('app/Subject', 'subject_id', 'id');
     }
     
 }

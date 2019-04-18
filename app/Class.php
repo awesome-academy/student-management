@@ -11,28 +11,28 @@ class Class extends Model
     public $timestamp = false;
 
     public function getSubject()
-    {	
-    	return $this->belongsTo('app/Subject', 'subject_id', 'id');
+    {   
+        return $this->belongsTo('app/Subject', 'subject_id', 'id');
     }
 
     public function getLesson()
     {
-    	return $this->belongsTo('app/Lesson', 'lesson_id', 'id');
+        return $this->belongsTo('app/Lesson', 'lesson_id', 'id');
     }
 
     public function getDay()
     {
-    	return $this->belongsTo('app/Day', 'day_id', 'id');
+        return $this->belongsTo('app/Day', 'day_id', 'id');
     }
 
     public function getSemester()
     {
-    	return $this->belongsTo('app/Semester', 'semester_id', 'id');
+        return $this->belongsTo('app/Semester', 'semester_id', 'id');
     }
 
     public function getRegistrationInformation()
     {
-    	return $this->hasMany('app/RegistrationInformation', 'registration_information_id', 'id');
+        return $this->hasMany('app/RegistrationInformation', 'registration_information_id', 'id');
     }
 
     public function getSubjectRegistration ()
