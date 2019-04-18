@@ -12,17 +12,17 @@ class SubjectRegistration extends Model
 
     public function getStudent()
     {
-    	return $this->belongsTo('app/Student', 'student_id', 'id');
+    	return $this->belongsTo('App\Student');
     }
 
     public function getRegistrationInformation()
     {
-    	return $this->belongsTo('app/RegistrationInformation', 'registration_information_id', 'id');
+    	return $this->belongsTo('App\RegistrationInformation';
     }
 
     public function getClass()
     {
-    	return $this->belongsToMany('app/Class', 'class_subject_registration', 'subject_registration_id', 'class_id');
+    	return $this->belongsToMany('App\Class', 'class_subject_registration', 'subject_registration_id', 'class_id');
     }
 
 }

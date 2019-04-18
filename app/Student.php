@@ -12,31 +12,31 @@ class Student extends Model
 
     public function getFeedback()
     {
-        return $this->hasMany('app/Feedback', 'student_id', 'id');
+        return $this->hasMany('App\Feedback');
     }
 
     public function getTranscript()
     {
-        return $this->hasMany('app/Transcript', 'student_id', 'id');
+        return $this->hasMany('App\Transcript');
     }
 
     public function getGeneration()
     {
-        return $this->belongsTo('app/Generation', 'generation_id', 'id');
+        return $this->belongsTo('App\Generation');
     }
 
     public function getDepartment()
     {
-        return $this->belongsTo('app/Department', 'department_id', 'id');
+        return $this->belongsTo('App\Department');
     }
 
     public function getSubjectRegistration()
     {
-        return $this->hasMany('app/SubjectRegistration', 'student_id', 'id');
+        return $this->hasMany('App\SubjectRegistration');
     }
     
     public function getUser()
     {
-        return $this->hasOne('app/User');
+        return $this->hasOne('App\User');
     }
 }
