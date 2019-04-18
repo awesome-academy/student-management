@@ -12,11 +12,11 @@ class Department extends Model
 
     public function getStudent()
     {
-        return $this->hasMany('app/Student', 'department_id', 'id');
+        return $this->hasMany('App\Student');
     }
 
     public function getRegistrationInformation()
     {
-        return $this->hasMany('app/RegistrationInformation', 'department_id', 'id');
+        return $this->hasMany('App\RegistrationInformation');
     }
 }

@@ -12,7 +12,7 @@ class RatePoint extends Model
 
     public function getSubject()
     {
-        return $this->hasMany('app/Subject', 'rate_point_id', 'id');
+        return $this->hasMany('App\Subject', 'rate_point_id', 'id');
     }
     
 }

@@ -12,12 +12,12 @@ class Generation extends Model
 
     public function getStudent()
     {
-        return $this->hasMany('app/Student', 'generation_id', 'id');
+        return $this->hasMany('App\Student');
     }
 
     public function getRegistrationInformation()
     {
-        return $this->belongsToMany('app/RegistrationInformation', 'generation_registration_information', 'generation_id',
+        return $this->belongsToMany('App\RegistrationInformation', 'generation_registration_information', 'generation_id',
             'registration_information_id');
     }
 }

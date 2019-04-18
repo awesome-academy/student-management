@@ -11,7 +11,7 @@ class Feedback extends Model
     
     public function getStudent()
     {
-        return $this->belongsTo('app/Student', 'student_id', 'id');
+        return $this->belongsTo('App\Student');
     }
 
 }

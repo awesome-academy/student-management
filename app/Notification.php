@@ -11,7 +11,7 @@ class Notification extends Model
     
     public function getAdmin()
     {
-        return $this->belongsTo('app/Admin', 'admin_id', 'id');
+        return $this->belongsTo('App\Admin', 'admin_id', 'id');
     }
     
 }

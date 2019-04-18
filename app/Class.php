@@ -12,32 +12,32 @@ class Class extends Model
 
     public function getSubject()
     {   
-        return $this->belongsTo('app/Subject', 'subject_id', 'id');
+        return $this->belongsTo('App\Subject');
     }
 
     public function getLesson()
     {
-        return $this->belongsTo('app/Lesson', 'lesson_id', 'id');
+        return $this->belongsTo('App\Lesson');
     }
 
     public function getDay()
     {
-        return $this->belongsTo('app/Day', 'day_id', 'id');
+        return $this->belongsTo('App\Day');
     }
 
     public function getSemester()
     {
-        return $this->belongsTo('app/Semester', 'semester_id', 'id');
+        return $this->belongsTo('App\Semester');
     }
 
     public function getRegistrationInformation()
     {
-        return $this->hasMany('app/RegistrationInformation', 'registration_information_id', 'id');
+        return $this->hasMany('App\RegistrationInformation');
     }
 
     public function getSubjectRegistration ()
     {
-        return $this->belongsToMany('app/SubjectRegistration', 'class_subject_registration', 'class_id',
+        return $this->belongsToMany('App\SubjectRegistration', 'class_subject_registration', 'class_id',
             'subject_registration_id');
     }
 }
