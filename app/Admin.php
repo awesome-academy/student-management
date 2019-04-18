@@ -11,12 +11,12 @@ class Admin extends Model
 
     public function getRegistrationInformation()
     {
-    	return $this->hasMany('app/RegistrationInformation', 'admin_id', 'id');
+        return $this->hasMany('app/RegistrationInformation', 'admin_id', 'id');
     }
 
     public function getNofitication()
     {
-    	return $this->hasMany('app/Notification', 'admin_id', 'id');
+        return $this->hasMany('app/Notification', 'admin_id', 'id');
     }
 
 }

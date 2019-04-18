@@ -12,7 +12,7 @@ class Lesson extends Model
 
     public function getClass()
     {
-    	return $this->hasMany('app/Class', 'lesson_id', 'id');
+        return $this->hasMany('app/Class', 'lesson_id', 'id');
     }
 
 }

@@ -12,18 +12,18 @@ class RegistrationInformation extends Model
 
     public function getGeneration()
     {
-    	return $this->belongsToMany('app/Generations', 'generation_registration_information', 'registration_information_id',
+        return $this->belongsToMany('app/Generations', 'generation_registration_information', 'registration_information_id',
             'generation_id');
     }
 
     public function getDepartment()
     {
-    	return $this->belongsTo('app/Department', 'department_id', 'id');
+        return $this->belongsTo('app/Department', 'department_id', 'id');
     }
 
     public function getSubjectRegistration()
     {
-    	return $this->hasMany('app/SubjectRegistration', 'registration_information_id', 'id');
+        return $this->hasMany('app/SubjectRegistration', 'registration_information_id', 'id');
     }
 
     public function getClass()
