@@ -34,8 +34,8 @@
                             </div>
                         @endif
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-user" name="idCard"
-                            placeholder="{{ trans('lang.create_account') }}" required>
+                            <input type="text" class="form-control form-control-user" name="student_id"
+                            placeholder="{{ trans('lang.student_id_card') }}" required>
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control form-control-user" name="email"
@@ -52,7 +52,7 @@
                             </div>
                             <br> 
                         </div>
-                        <input type="submit" name="register" value="{{ trans('lang.login') }}"
+                        <input type="submit" name="register" value="{{ trans('lang.register') }}"
                         class="btn btn-primary btn-user btn-block">       
                     </form>
                     
