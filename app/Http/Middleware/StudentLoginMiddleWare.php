@@ -18,17 +18,14 @@ class StudentLoginMiddleWare
     public function handle($request, Closure $next)
     {
         if (Auth::check()) {
-                
                 return $next($request);
         } else {
             $token = $request->cookie();
             $user = User::where('remember_token', $token)->first();
             if (!empty($user)) {
                 if (Auth::login($user)) {
-                    
                     return $next($request);
                 } else {
-                    
                     return redirect(route('students.return_login'));
                 }
             }

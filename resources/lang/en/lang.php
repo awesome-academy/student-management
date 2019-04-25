@@ -26,4 +26,9 @@
         'student_had_account' => 'You had an account',
         'confirm_password_incorrect' => 'Confirm password is incorrect',
         'email_password_incorrect' => 'Email or password is incorrect',
+        'home' => 'Home page',
+        'student_information' => 'Information',
+        'subject_register' => 'Subject register',
+        'update_information' => 'Update information',
+        'welcome' => 'Wellcome',
     ];

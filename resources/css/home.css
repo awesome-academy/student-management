@@ -1,0 +1,9 @@
+.home-background-img {
+    background-image: url('/student_img/home_background.jpg');
+    width: 100%;
+    height: 984px;
+    background-size: cover;
+}
+.text-color {
+    color: white;
+}

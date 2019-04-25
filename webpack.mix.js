@@ -19,7 +19,16 @@ mix.styles([
     'resources/css/sb-admin-2.min.css',
     'resources/css/welcome.css',
  ], 'public/css/app.css');
+mix.styles([
+    'resources/css/welcome.css',
+    'resources/css/home.css',
+    'resources/css/all.min.css',
+    'resources/css/resume.min.css',
+ ], 'public/css/home.css');
 mix.scripts([
     'resources/js/sb-admin-2.min.js',
  ], 'public/js/app.js');
- 
+mix.scripts([
+    'resources/js/jquery.easing.min.js',
+    'resources/js/resume.min.js',
+ ], 'public/js/home.js');

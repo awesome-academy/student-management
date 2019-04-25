@@ -26,4 +26,9 @@
         'student_had_account' => 'Bạn đã có tài khoản',
         'confirm_password_incorrect' => 'Nhập lại mật khẩu không khớp',
         'email_password_incorrect' => 'Email hoặc mật khẩu không đúng',
+        'home' => 'Trang chủ',
+        'information' => 'Thông tin',
+        'subject_register' => 'Đăng ký môn học',
+        'update_information' => 'Cập nhật thông tin',
+        'welcome' => 'Xin chào',
     ];

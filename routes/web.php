@@ -25,5 +25,5 @@ Route::post('students/register', 'RegisterController@doStudentRegister')->name('
 
 Route::group(['prefix' => 'students', 'middleware' => 'check'], function()
 {
-    Route::get('/home', 'RouteController@returnStudentHome')->name('students.return_home');
+	Route::get('/home', 'RouteController@returnStudentHome')->name('students.return_home');
 });

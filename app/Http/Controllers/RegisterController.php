@@ -62,6 +62,5 @@ class RegisterController extends Controller
             return redirect(route('students.return_register'))
             ->with('notification', __('lang.confirm_password_incorrect'));
         }
-        
     }
 }

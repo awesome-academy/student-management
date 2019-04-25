@@ -34,4 +34,5 @@ class RouteController extends Controller
 
         return view('student/login');
     }
+
 }
