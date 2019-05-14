@@ -1,0 +1,20 @@
+div.page-content-margin {
+	margin-left: 30px;
+	margin-top: 25px;
+	margin-right: 20px;
+}
+.text-center {
+	text-align: center;
+}
+.avatar-size {
+	width: 250px;
+	height: 250px;
+}
+.avatar-arlert-size {
+	width: 250px;
+}
+.font-size-18 {
+	font-size: 18px;
+	color: black;
+	margin-top: 20px;
+}

@@ -22,12 +22,12 @@ class Student extends Model
 
     public function getGeneration()
     {
-        return $this->belongsTo('App\Generation');
+        return $this->belongsTo('App\Generation', 'generation_id', 'id');
     }
 
     public function getDepartment()
     {
-        return $this->belongsTo('App\Department');
+        return $this->belongsTo('App\Department', 'department_id', 'id');
     }
 
     public function getSubjectRegistration()

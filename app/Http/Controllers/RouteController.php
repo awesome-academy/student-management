@@ -35,4 +35,14 @@ class RouteController extends Controller
         return view('student/login');
     }
 
+    public function returnStudentInformation()
+    {
+        return view('student/information/information');
+    }
+
+    public function returnStudentUpdateInformation()
+    {
+        return view('student/information/update_information');
+    }
+
 }

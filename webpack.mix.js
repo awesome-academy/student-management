@@ -24,6 +24,7 @@ mix.styles([
     'resources/css/home.css',
     'resources/css/all.min.css',
     'resources/css/resume.min.css',
+    'resources/css/page.css',
  ], 'public/css/home.css');
 mix.scripts([
     'resources/js/sb-admin-2.min.js',
