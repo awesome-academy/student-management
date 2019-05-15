@@ -41,4 +41,11 @@
         'current_address' => 'Current address',
         'generation' => 'Generation',
         'department' => 'Department',
+        'change_avatar' => 'Change avatar',
+        'avatar' => 'Avatar',
+        'error_file' => 'File is not available',
+        'phone_max' => 'Phone max is 15 characters',
+        'current_address' => 'Current address max is 50 characters',
+        'update_success' => 'Update successfully',
+        'update_fail' => 'Fail to update',
     ];

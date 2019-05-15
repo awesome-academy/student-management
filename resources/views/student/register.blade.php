@@ -53,6 +53,7 @@
                             <br> 
                         </div>
                         <input type="submit" name="register" value="{{ trans('lang.register') }}"
+                        class="btn btn-primary btn-user btn-block">
                     </form>
                     
                     <hr>

@@ -8,5 +8,7 @@ return [
     'home-js' => '/js/home.js',
     'all-min-css' => '/bower_components/Font-Awesome/css/all.min.css',
     'app-css' => '/css/app.css',
+    'app-js' => '/js/app.js',
     'student-img' => '/student_img/',
+    'student-default-img' => '/student_img/default_avatar.jpg',
 ];

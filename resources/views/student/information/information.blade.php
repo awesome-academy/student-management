@@ -13,12 +13,13 @@
     </div>
     <div class="page-content-margin">
         <h3 class="text-center">{{ __('lang.check_information') }}</h3>
+        <br>
         <div>
             @if (isset($student))
                 @if (!empty($student->avatar))
-                    <img src="{{ config('social.student-img') . $student->avatar) }}" alt="" class="img-thumbnail">
+                    <img src="{{ config('social.student-img') . $student->avatar }}" alt="" class="img-thumbnail">
                 @else
-                    <img src="{{ config('social.student-img')) }}default_avatar.jpg" alt="" class="img-thumbnail avatar-size">
+                    <img src="{{ config('social.student-default-img') }}" alt="" class="img-thumbnail avatar-size">
                     <div class="alert alert-danger avatar-arlert-size">
                         {{ __('lang.non_avatar') }}
                     </div>
@@ -39,11 +40,10 @@
                     <br>
                 </div>
                 <div>
-                    <br>
-                    <a href="{{ route('students.return_update_information') }}" class="btn btn-primary stretched-link">
+                    
+                    <a href="{{ route('students.return_update_information') }}" class="btn btn-primary">
                         {{ __('lang.update_information') }}
                     </a>
-                        
                 </div>
             @endif
         </div>

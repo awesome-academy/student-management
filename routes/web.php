@@ -28,5 +28,6 @@ Route::group(['prefix' => 'students', 'middleware' => 'check'], function() {
 	Route::group(['prefix' => 'information'], function() {
 		Route::get('/', 'RouteController@returnStudentInformation')->name('students.return_information');
 		Route::get('/update', 'RouteController@returnStudentUpdateInformation')->name('students.return_update_information');
+		Route::post('/update', 'HomeController@updateStudentInformation')->name('student.do_update_information');
 	});
 });

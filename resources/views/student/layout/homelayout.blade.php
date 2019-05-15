@@ -25,7 +25,7 @@
                     src="{{ config('social.student-img') . $student->avatar }}" alt="avatar">
                 @else
                     <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
-                    src="{{ config('social.student-img') }}default_avatar.jpg" alt="avatar">
+                    src="{{ config('social.student-default-img') }}" alt="avatar">
                 @endif
             @endif
         </a>
@@ -37,8 +37,12 @@
                         {{ __('lang.information') }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('students.return_information') }}">{{ __('lang.check_information') }}</a>
-                        <a class="dropdown-item" href="{{ route('students.return_update_information') }}">{{ __('lang.update_information') }}</a>
+                        <a class="dropdown-item" href="{{ route('students.return_information') }}">
+                            {{ __('lang.check_information') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('students.return_update_information') }}">
+                            {{ __('lang.update_information') }}
+                        </a>
                     </div>
                 </li>
                 <li class="nav-item" id="register">
