@@ -22,7 +22,7 @@ class Subject extends Model
 
     public function getClass()
     {
-        return $this->hasMany('App\Class');
+    	return $this->hasMany('App\Sclass', 'subject_id', 'id');
     }
 
     public function getRegistrationInformation()

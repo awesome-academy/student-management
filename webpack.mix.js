@@ -26,6 +26,7 @@ mix.styles([
     'resources/css/resume.min.css',
     'resources/css/check-information.css',
     'resources/css/update-information.css',
+    'resources/css/subject-registration.css',
  ], 'public/css/home.css');
 mix.scripts([
     'resources/js/sb-admin-2.min.js',
@@ -34,4 +35,5 @@ mix.scripts([
     'resources/js/update-information.js',
 	'resources/js/jquery.easing.min.js',
     'resources/js/resume.min.js',
+    'resources/js/subject-registration.js',
  ], 'public/js/home.js');

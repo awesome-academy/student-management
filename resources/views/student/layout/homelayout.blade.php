@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @routes()
     <title>@yield('title')</title>
     
     <link href="{{ config('social.bootstrap') }}" rel="stylesheet">
@@ -45,10 +46,20 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item" id="register">
-                    <a class="nav-link" href="#">{{ __('lang.subject_register') }}</a>
+                <li class="nav-item dropdown" id="registration">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ __('lang.subject_registration') }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('students.return_subject_registration') }}">
+                            {{ __('lang.register') }}
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            {{ __('lang.registration_instructions') }}
+                        </a>
+                    </div>
                 </li>
-                    
                 <li class="nav-item" id="logout">
                     <a class="nav-link" href="{{ route('students.do_logout') }}">{{ __('lang.logout') }}</a>
                 </li>
