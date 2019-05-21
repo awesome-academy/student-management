@@ -19,6 +19,16 @@
         <span class="badge badge-pill badge-light font-size-14"><a href="">{{ __('lang.registration_instructions') }}</a></span>
         <span class="badge badge-pill badge-light font-size-14"><a href="">{{ __('lang.feed_back') }}</a></span>
         <hr>
+        @if (session('fail'))
+            <div class="alert alert-danger text-center">
+                {{ session('fail') }}
+            </div>
+        @endif
+        @if (session('success'))
+            <div class="alert alert-success text-center" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         @if (!isset($registration))
             <div class="alert alert-danger text-center">
                 {{ $notification }}
@@ -67,7 +77,24 @@
                 </form>
 
             </div>
-
+            <div>
+                <table class="table table-style">
+                        <caption>{{ __('lang.class_list') }}</caption>
+                        <thead class="thead-red">
+                            <tr>
+                                <th scope="col">{{ __('lang.ordinal_number') }}</th>
+                                <th scope="col">{{ __('lang.subject') }}</th>
+                                <th scope="col">{{ __('lang.class_group') }}</th>
+                                <th scope="col">{{ __('lang.teacher') }}</th>
+                                <th scope="col">{{ __('lang.credit') }}</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    
+                        </tbody>                    
+                    </table>
+            </div>
             <div class="d-flex justify-content-center">
                 
             </div>

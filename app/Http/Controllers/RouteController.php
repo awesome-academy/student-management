@@ -69,13 +69,13 @@ class RouteController extends Controller
                     if ($department->id == $registration->department_id) {
                         $generation = $student->getGeneration()->first();
                         $gens = $registration->getGeneration()->get();
-                        $boolean =  false;
+                        $boo =  false;
                         foreach ($gens as $gen) {
                             if ($generation->id == $gen->id) {
-                                $boolean = true;
+                                $boo = true;
                             }
                         }
-                        if ($boolean) {
+                        if ($boo) {
                             $subjects = $registration->getSubject()->get();
                                 
                             return view('student/subject_registration/subject_registration')

@@ -66,4 +66,11 @@
         'day' => 'Thứ',
         'not_in_registration_time' => 'Không trong thời gian đăng ký',
         'not_allowed_to_register' => 'Bạn không được phép đăng ký',
+        'ordinal_number' => 'STT',
+        'credit' => 'Số tín chỉ',
+        'choose_a_class' => 'Hãy chọn 1 lớp học phần',
+        'you_registerd_this_class' => 'Bạn đã đăng ký lớp học phần này rồi!',
+        'same_schedule_error' => 'Trùng lịch!! Bạn vui lòng chọn lớp học phần khác',
+        'fail_to_register' => 'Lưu đăng ký không thành công',
+        'class_full' => 'Lớp học phần này đã đủ sĩ số',
     ];

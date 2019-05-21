@@ -66,4 +66,11 @@
         'day' => 'Day',
         'not_in_registration_time' => 'You are not in registration time',
         'not_allowed_to_register' => 'You are not allowed to register',
+        'ordinal_number' => 'Ordinal number',
+        'credit' => 'Credits',
+        'choose_a_class' => 'Please choose a class',
+        'you_registerd_this_class' => 'You have registerd this class!',
+        'same_schedule_error' => 'Same schedule!! ',
+        'fail_to_register' => 'You must choose another class because of the same schedule!',
+        'class_full' => 'This class is full',
     ];
