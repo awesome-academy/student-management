@@ -13,6 +13,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
+        "mariuzzo/laravel-js-localization": "^1.4",
         "tightenco/ziggy": "^0.7.1"
     },
     "require-dev": {

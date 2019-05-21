@@ -73,4 +73,10 @@
         'same_schedule_error' => 'Trùng lịch!! Bạn vui lòng chọn lớp học phần khác',
         'fail_to_register' => 'Lưu đăng ký không thành công',
         'class_full' => 'Lớp học phần này đã đủ sĩ số',
+        'lessons' => 'Số kíp học',
+        'cancel_registration' => 'Hủy đăng ký',
+        'none_class_selected' => 'Bạn chưa chọn lớp học phần nào',
+        'cancel_registration_success' => 'Hủy môn học thành công',
+        'fail_to_cancel_registration' => 'Hủy môn học thất bại',
+        'total_credit' => 'Tổng số tín chỉ',
     ];

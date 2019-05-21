@@ -36,5 +36,7 @@ Route::group(['prefix' => 'students', 'middleware' => 'check'], function()
         Route::get('/', 'RouteController@returnSubjectRegistration')->name('students.return_subject_registration');
         Route::post('/', 'SubjectRegisterController@registerSubject')->name('students.do_subject_registration');
         Route::post('/class-table-ajax', 'AjaxController@getClassTable')->name('students.class_table_ajax');
+        Route::get('/cancel-registration/{id}', 'CancelRegistrationController@cancelRegistration')
+        ->name('students.cancel_registration');
     });
 });

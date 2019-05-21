@@ -13,7 +13,7 @@
     <link href="{{ config('social.bootstrap') }}" rel="stylesheet">
     <link href="{{ config('social.index') }}" rel="stylesheet">
     <link href="{{ config('social.home-css') }}" rel="stylesheet">
-    
+
 </head>
 
 <body id="page-top">
