@@ -27,6 +27,7 @@ mix.styles([
     'resources/css/check-information.css',
     'resources/css/update-information.css',
     'resources/css/subject-registration.css',
+    'resources/css/registration-instruction.css',
  ], 'public/css/home.css');
 mix.scripts([
     'resources/js/sb-admin-2.min.js',

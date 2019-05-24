@@ -16,7 +16,11 @@
     <div class="page-content-margin">
         <h3 class="text-center">{{ __('lang.subject_registration') }}</h3>
         <br>
-        <span class="badge badge-pill badge-light font-size-14"><a href="">{{ __('lang.registration_instructions') }}</a></span>
+        <span class="badge badge-pill badge-light font-size-14">
+            <a href="{{ route('students.registration-instruction') }}">
+                {{ __('lang.registration_instructions') }}
+            </a>
+        </span>
         <span class="badge badge-pill badge-light font-size-14"><a href="">{{ __('lang.feed_back') }}</a></span>
         <hr>
         @if (session('fail'))
