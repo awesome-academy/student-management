@@ -23,9 +23,9 @@ class CancelRegistrationController extends Controller
                 ->firstOrFail();
             try {
                 DB::beginTransaction();
-                foreach($rq['classCheckbox'] as $value) {
+                foreach ($rq['classCheckbox'] as $value) {
                     $credit = Sclass::findOrFail($value)->getSubject()->firstOrFail()->credits;
-                        
+                    
                     DB::table('class_subject_registration')
                     ->where('subject_registration_id', $subject_registration->id)
                     ->where('class_id', $value)
@@ -43,7 +43,7 @@ class CancelRegistrationController extends Controller
 
                 return redirect(route('students.return_subject_registration'))
                 ->with('success', __('lang.cancel_registration_success'));
-            } catch(\Exception $e) {
+            } catch (\Exception $e) {
                 DB::rollback();
 
                 return redirect(route('students.return_subject_registration'))

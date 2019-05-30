@@ -9,7 +9,9 @@ use App\Student;
 use App\RegistrationInformation;
 use App\Subject;
 use App\SubjectRegistration;
-
+use App\Semester;
+use App\Lesson;
+use App\Day;
 class RouteController extends Controller
 {
     public function returnWelcome()
@@ -87,13 +89,7 @@ class RouteController extends Controller
                                 $registeredClasses = $subjectRegistration->getClass()->get();
                             }
 
-                            return view('student/subject_registration/subject_registration')
-                            ->with([
-                                'registration' => $registration,
-                                'subjects' => $subjects,
-                                'subjectRegistration' => $subjectRegistration,
-                                'registeredClasses' => $registeredClasses,
-                            ]);
+                            return view('student/subject_registration/subject_registration', compact('registration', 'subjects', 'subjectRegistration', 'registeredClasses'));
                         } else {
                             return view('student/subject_registration/subject_registration')
                             ->with('notification', __('lang.not_allowed_to_register'));
@@ -121,4 +117,62 @@ class RouteController extends Controller
         return view('student/subject_registration/registration_instruction');
     }
 
+    public function returnSchedule(Request $rq)
+    {   
+        $user = Auth::User();
+        $student = Student::findOrFail($user->student_id);
+        $subject_registration = SubjectRegistration::where('student_id', $student->id)
+        ->orderBy('id', 'desc')
+        ->first();
+        if (!empty($subject_registration)) {
+            $semester = $subject_registration->getRegistrationInformation()
+                ->firstOrFail()
+                ->getSemester()
+                ->firstOrFail();
+            $begin_date = $semester->begin_date;
+            if (date('l', strtotime($begin_date)) != 'Monday') {
+                $begin_date = date('Y-m-d', strtotime($begin_date . __('lang.next-monday')));
+            }
+            $count = 1;
+            while ($begin_date < $semester->finish_date) {
+                $weeks[] = array(
+                    'id' => $count,
+                    'begin_date' => $begin_date,
+                    'finish_date' => date('Y-m-d', strtotime($begin_date . __('lang.next-sunday'))),
+                );
+                $count ++;
+                $begin_date = date('Y-m-d', strtotime($begin_date . __('lang.next-monday')));
+            }
+            if ($rq['weekSelect']) {
+                $lessons = Lesson::all();
+                $days = Day::all();
+                $now_week = $rq['weekSelect'];
+
+                return view('student/schedule', compact('weeks', 'semester', 'lessons', 'days', 'now_week'));
+            }
+
+            $now_date = date ("Y-m-d");
+            foreach ($weeks as $week) {
+                if ($now_date >= $week['begin_date'] && $now_date <= $week['finish_date']) {
+                    $lessons = Lesson::all();
+                    $days = Day::all();
+                    $now_week = $week['id'];
+
+                    return view('student/schedule', compact('weeks', 'semester', 'lessons', 'days', 'now_week'));
+                }
+            }
+            $lessons = Lesson::all();
+            $days = Day::all();
+
+            return view('student/schedule', compact('weeks', 'semester', 'lessons', 'days'));
+        } else {
+            return view('student/schedule')->with('fail', __('lang.non_schedule'));
+        }
+        
+    }
+
+    public function returnPoint()
+    {
+        return view('student/point');
+    }
 }

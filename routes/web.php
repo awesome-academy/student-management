@@ -41,4 +41,7 @@ Route::group(['prefix' => 'students', 'middleware' => 'check'], function()
         Route::get('/registration-instruction', 'RouteController@returnRegistrationInstruction')
         ->name('students.registration-instruction');
     });
+    Route::get('/schedule', 'RouteController@returnSchedule')->name('students.return_schedule');
+    Route::post('schedule/schedule-table-ajax', 'AjaxController@getSchedule')->name('students.schedule_table_ajax');
+    Route::get('/point', 'RouteController@returnPoint')->name('students.return_point');
 });
