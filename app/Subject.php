@@ -21,12 +21,7 @@ class Subject extends Model
 
     public function getRatePoint()
     {
-        return $this->belongsTo('App\RatePoint');
-    }
-
-    public function getTranscript()
-    {
-        return $this->hasMany('App\Transcript');
+        return $this->belongsTo('App\RatePoint', 'rate_point_id', 'id');
     }
 
     public function getClass()

@@ -64,7 +64,7 @@
                     <a class="nav-link" href="{{ route('students.return_schedule') }}">{{ __('lang.schedule') }}</a>
                 </li>
                 <li class="nav-item" id="schedule">
-                    <a class="nav-link" href="#">{{ __('lang.check_point') }}</a>
+                    <a class="nav-link" href="{{ route('students.return_point') }}">{{ __('lang.check_point') }}</a>
                 </li>
                 <li class="nav-item" id="logout">
                     <a class="nav-link" href="{{ route('students.do_logout') }}">{{ __('lang.logout') }}</a>

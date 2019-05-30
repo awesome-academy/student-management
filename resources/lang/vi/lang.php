@@ -111,4 +111,22 @@
         //Viết tắt môn học và phòng học
         'mh' => 'MH',
         'ph' => 'PH',
+        //
+        'point_table' => 'Bảng điểm',
+        'non_subject_to_show' => 'Bạn chưa học môn nào cả!',
+        // Phần trăm điểm thành phần
+        'CC_percent' => '% CC',
+        'KT_percent' => '% KT',
+        'T_percent' => '% Thi',
+        // Điểm thành phần
+        'attendence_point' => 'Điểm CC',
+        'test_point' => 'Điểm KT',
+        'final_exam_point' => 'Điểm thi',
+        'final_point' => 'Điểm TK',
+        //
+        'status' => 'Trạng thái',
+        'pass_subject' => 'Qua môn',
+        'fail_subject' => 'Trượt môn',
+        'none' => 'Chưa có',
+        'in_progress' => 'Đang học',
     ];

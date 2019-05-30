@@ -20,7 +20,7 @@ class StudentLoginMiddleWare
         if (Auth::check()) {
                 return $next($request);
         } else {
-            $token = $request->cookie();
+            $token = $request->cookie('remember_token');
             $user = User::where('remember_token', $token)->first();
             if (!empty($user)) {
                 if (Auth::login($user)) {

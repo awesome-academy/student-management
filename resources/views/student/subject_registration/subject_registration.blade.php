@@ -73,7 +73,7 @@
                         </thead>
                         <tbody id="tableBody">
                                     
-                        </tbody>                    
+                        </tbody>
                     </table>
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary background-red ">

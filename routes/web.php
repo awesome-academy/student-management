@@ -45,3 +45,7 @@ Route::group(['prefix' => 'students', 'middleware' => 'check'], function()
     Route::post('schedule/schedule-table-ajax', 'AjaxController@getSchedule')->name('students.schedule_table_ajax');
     Route::get('/point', 'RouteController@returnPoint')->name('students.return_point');
 });
+
+Route::get('admins/login', 'RouteController@returnAdminLogin')->name('admins.return_login');
+
+Route::get('admins/login', 'RouteController@doAdminLogin')->name('admins.do_login');
