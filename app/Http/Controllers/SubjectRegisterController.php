@@ -19,7 +19,7 @@ class SubjectRegisterController extends Controller
             $class_id = $rq['radio'];
             $registration = Sclass::findOrFail($rq['radio'])->getRegistrationInformation()->firstOrFail();
             $user = Auth::User();
-            $student = Student::findOrFail($user->student_id);
+            $student = $user->getStudent()->firstOrFail();
 
             //Kiểm tra xem đã có đăng ký chưa. Nếu chưa có thì tạo, có rồi thì bỏ qua.
             while (empty($subject_registration)) {

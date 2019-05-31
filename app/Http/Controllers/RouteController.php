@@ -68,7 +68,7 @@ class RouteController extends Controller
             if ($begin <= $now && $now <= $finish) {
                 if (Auth::check()) {
                     $user = Auth::User();
-                    $student = Student::findOrFail($user->student_id);
+                    $student = $user->getStudent()->firstOrFail();
                     $department = $student->getDepartment()->first();
                     if ($department->id == $registration->department_id) {
                         $generation = $student->getGeneration()->first();
@@ -121,7 +121,7 @@ class RouteController extends Controller
     public function returnSchedule(Request $rq)
     {   
         $user = Auth::User();
-        $student = Student::findOrFail($user->student_id);
+        $student = $user->getStudent()->firstOrFail();
         $subject_registration = SubjectRegistration::where('student_id', $student->id)
         ->orderBy('id', 'desc')
         ->first();
@@ -175,10 +175,10 @@ class RouteController extends Controller
     public function returnPoint()
     {
         $user = Auth::User();
-        $student = Student::findOrFail($user->student_id);
+        $student = $user->getStudent()->firstOrFail();
         $subject_registration = SubjectRegistration::where('student_id', $student->id)
         ->orderBy('id', 'desc')->get();
-        if (!empty($subject_registration)) {
+        if (count($subject_registration) > 0) {
             foreach ($subject_registration as $sr) {
                 $semester = $sr->getRegistrationInformation()
                     ->firstOrFail()

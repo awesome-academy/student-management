@@ -40,7 +40,7 @@ class AjaxController extends Controller
         $id = $rq['week_id'];
         $user = Auth::User();
 
-        $student = Student::findOrFail($user->student_id);
+        $student = $user->getStudent()->firstOrFail();
 
         $subject_registration = SubjectRegistration::where('student_id', $student->id)
         ->orderBy('id', 'desc')

@@ -34,7 +34,7 @@
                 @endif
                 <div class="form-group max-width-400">
                     <label for="exampleFormControlFile1">{{ __('lang.change_avatar') }}</label>
-                    <input type="file" class="form-control-file" onchange="previewFile()" name="avatar" required="true">
+                    <input type="file" class="form-control-file" onchange="previewFile()" name="avatar">
                 </div>
                 <div>
                     @if (count($errors)>0)

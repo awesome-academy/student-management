@@ -17,7 +17,7 @@ class CancelRegistrationController extends Controller
         if (!empty($rq['classCheckbox'])) {
             $registration = RegistrationInformation::findOrFail($rq['id']);
             $user = Auth::User();
-            $student = Student::findOrFail($user->student_id);
+            $student = $user->getStudent()->firstOrFail();
             $subject_registration = SubjectRegistration::where('student_id', $student->id)
                 ->where('registration_information_id', $registration->id)
                 ->firstOrFail();

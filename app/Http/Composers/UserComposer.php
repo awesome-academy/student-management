@@ -14,7 +14,7 @@ class UserComposer
         if (Auth::check()) {
             $user = Auth::user();
             if (!empty($user)) {
-                $student = Student::findOrFail($user->student_id);
+                $student = $user->getStudent()->firstOrFail();
                 $view->with('student', $student);
             } else {
                 return redirect(route('students.return_login'));

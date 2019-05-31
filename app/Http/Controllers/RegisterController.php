@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\SignupRequestValidation;
 use Illuminate\Http\Request;
 use App\Repositories\StudentRepository;
@@ -39,17 +40,22 @@ class RegisterController extends Controller
                     if ($count != 0) {
                         return redirect('students/register')->with('notification', __('lang.email_exist'));
                     }
-                    $data = array(
-                        'email' => $email,
-                        'password' => bcrypt($password),
-                        'role' => 1,
-                        'student_id' => $student['id'],
-                    );
-                    $result = $this->userRepository->create($data);
+                    $user = new User;
+                    $user->email = $email;
+                    $user->password = bcrypt($password);
+                    $user->role = 1;
+                    $result = $user->save();
                     
-                    if ($result) { 
-                        return redirect(route('students.return_register'))
-                        ->with('success', __('lang.register_success'));
+                    if ($result) {
+                        $student->user_id = $user->id;
+                        $result = $student->save();
+                        if ($result) {
+                            return redirect(route('students.return_register'))
+                            ->with('success', __('lang.register_success'));
+                        } else {
+                            return redirect(route('students.return_register'))->with('notification', __('lang.save_fail'));
+                        }
+                        
                     } else {
                         return redirect(route('students.return_register'))->with('notification', __('lang.save_fail'));
                     }
