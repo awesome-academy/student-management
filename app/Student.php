@@ -19,6 +19,7 @@ class Student extends Model
         'current_address',
         'department_id',
         'generation_id',
+        'user_id',
     ];
 
     public $timestamp = false;
@@ -51,6 +52,6 @@ class Student extends Model
     
     public function getUser()
     {
-        return $this->hasOne('App\User', 'student_id', 'id');
+        return $this->belongsTo('App\User', 'user_id', 'id');
     }
 }

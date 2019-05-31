@@ -36,7 +36,8 @@ class HomeController extends Controller
                 'phone' => $rq['phone'],
                 'current_address' => $rq['current_address'],
             );
-            $result = $this->studentRepository->update(Auth::user()->student_id, $array);
+            $student = Auth::user()->getStudent()->firstOrFail();
+            $result = $this->studentRepository->update($student->id, $array);
             if ($result) {
                 return redirect(route('students.return_update_information'))
                 ->with('success', __('lang.update_success'));
