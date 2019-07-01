@@ -132,4 +132,7 @@
         'fail_subject' => 'Fail',
         'none' => 'None',
         'in_progress' => 'In progress',
+        
+        //ADMIN
+        'admin_login' => 'Admin login',
     ];

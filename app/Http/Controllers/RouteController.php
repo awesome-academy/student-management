@@ -199,4 +199,13 @@ class RouteController extends Controller
         }
     }
     
+    public function returnAdminLogin()
+    {
+        return view('admin/login');
+    }
+
+    public function returnAdminHome()
+    {
+        return view('admin/home');
+    }
 }

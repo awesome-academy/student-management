@@ -13,4 +13,6 @@ return [
     'student-default-img' => '/student_img/default_avatar.jpg',
     'registration-instruction-video' => 'https://www.youtube.com/embed/kRJ3IMQU_pE',
     'registration-instruction-document' => 'http://ueb.edu.vn/Uploads/file/diepmtcn@gmail.com/2016/07/21/Huong%20dan%20su%20dung%20cong%20thong%20tin%20.pdf',
+    'role_admin' => 2,
+    'role_student' => 1, 
 ];

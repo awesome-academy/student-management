@@ -129,4 +129,7 @@
         'fail_subject' => 'Trượt môn',
         'none' => 'Chưa có',
         'in_progress' => 'Đang học',
+
+        //ADMIN
+        'admin_login' => 'Admin đăng nhập',
     ];
