@@ -1,6 +1,6 @@
 @extends('student.layout.loginlayout')
 @section('title')
-    {{ trans('lang.student_login_title') }}
+    {{ trans('lang.admin_login') }}
 @endsection
 @section('content')
     <div class="row justify-content-center">
@@ -9,7 +9,7 @@
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block login-background">
+                        <div class="col-lg-6 d-none d-lg-block admin-login-background">
                         </div>
                         <div class="col-lg-6">
                             <div class="p-5">
@@ -17,7 +17,7 @@
                                     <h1 class="h4 text-gray-900 mb-4">{{ trans('lang.login') }}</h1>
                                 </div>
                     
-                                <form class="user" method="POST" action="{{ route('students.do_login') }}">
+                                <form class="user" method="POST" action="{{ route('admins.do_login') }}">
                                     @csrf
                                     @if (count($errors) > 0)
                                         <div class="alert alert-danger">
@@ -49,13 +49,8 @@
                                     <input type="submit" name="login" id="login" value="{{ trans('lang.login') }}"
                                     class="btn btn-primary btn-user btn-block">
                                 </form>
-                    
+                                
                                 <hr>
-                                <div class="text-center">
-                                    <a class="small" href="{{ route('students.return_register') }}">
-                                        {{ trans('lang.create_account') }}
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>

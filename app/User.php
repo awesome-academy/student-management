@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Student');
     }
+
+    public function getAdmin()
+    {
+        return $this->hasOne('App\Admin');
+    }
 }

@@ -16,7 +16,7 @@ class LoginController extends Controller
         $remember = $rq['remember'];
 
         if (!empty($remember)) {
-            if (Auth::attempt(['email' => $email, 'password' => $password], true)) {
+            if (Auth::attempt(['email' => $email, 'password' => $password, 'role' => config('social.role_student')], true)) {
                 $token = Auth::User()->remember_token;
 
                 return redirect(route('students.return_home'))->withCookie('remember_token', $token, 14400);
@@ -24,7 +24,7 @@ class LoginController extends Controller
                 return redirect(route('students.return_login'));
             }
         } else {
-            if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            if (Auth::attempt(['email' => $email, 'password' => $password, 'role' => config('social.role_student')])) {
                 return redirect(route('students.return_home'));
             } else {
                 return redirect(route('students.return_login'))

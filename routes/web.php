@@ -48,4 +48,10 @@ Route::group(['prefix' => 'students', 'middleware' => 'check'], function()
 
 Route::get('admins/login', 'RouteController@returnAdminLogin')->name('admins.return_login');
 
-Route::get('admins/login', 'RouteController@doAdminLogin')->name('admins.do_login');
+Route::post('admins/login', 'AdminLoginController@doAdminLogin')->name('admins.do_login');
+
+Route::group(['prefix' => 'admins'], function()
+{
+    Route::get('/home', 'RouteController@returnAdminHome')->name('admins.return_home');
+    
+});
