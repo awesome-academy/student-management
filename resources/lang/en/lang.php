@@ -30,7 +30,7 @@
         'student_information' => 'Information',
         'update_information' => 'Update information',
         'welcome' => 'Wellcome',
-        'check_information' => 'Personal information',
+        'check_information' => 'Profile',
         'non_avatar' => 'No avatar to show',
         'full_name' => 'Full name',
         'birth' => 'Date of birth',

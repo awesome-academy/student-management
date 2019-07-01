@@ -1,0 +1,21 @@
+.background-img {
+    background-image: url('/admin_img/image2.jpg');
+    width: 1568px;
+    height: 870px;
+    background-size: cover;
+    position: center center;
+    background-repeat: no-repeat;
+}
+
+.welcome-text {
+	color: white;
+	font-size: 50px;
+	font-family: Arial;
+	font-weight: bold;
+}
+.margin-top-10 {
+	margin-top: 10px;
+}
+.background-color-white {
+	background-color: white;
+}

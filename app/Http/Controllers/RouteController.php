@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
 use App\User;
 use App\Student;
@@ -38,6 +39,9 @@ class RouteController extends Controller
     public function studentLogout()
     {
         Auth::logout();
+        Cookie::queue(
+            Cookie::forget('remember_token')
+        );
 
         return view('student/login');
     }
@@ -207,5 +211,15 @@ class RouteController extends Controller
     public function returnAdminHome()
     {
         return view('admin/home');
+    }
+
+    public function adminLogout()
+    {
+        Auth::logout();
+        Cookie::queue(
+            Cookie::forget('remember_token')
+        );
+
+        return view('admin/login');
     }
 }
