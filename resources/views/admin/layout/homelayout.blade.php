@@ -44,20 +44,25 @@
                         <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
                         src="{{ config('social.student-default-img') }}" alt="avatar">
                     @endif
-                @endif      
-            </a>S
+                @endif
+            </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-address-card font-size-20"></i>
                     <span>{{ __('lang.check_information') }}</span>
                 </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('admins.return_profile') }}">{{ __('lang.check_information') }}</a>
+                        <a class="collapse-item" href="#">{{ __('lang.update_information') }}</a>
+                    </div>
+                </div>
             </li>
-
             
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -98,9 +103,13 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('admins.return_profile') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     {{ __('lang.check_information') }}
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    {{ __('lang.change_password') }}
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('admins.do_logout') }}">

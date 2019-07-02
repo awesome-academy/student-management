@@ -132,4 +132,5 @@
 
         //ADMIN
         'admin_login' => 'Admin đăng nhập',
+        'change_password' => 'Đổi mật khẩu',
     ];

@@ -222,4 +222,9 @@ class RouteController extends Controller
 
         return view('admin/login');
     }
+
+    public function returnAdminProfile()
+    {
+        return view('admin/profile');
+    }
 }
