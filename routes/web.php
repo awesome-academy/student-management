@@ -54,4 +54,8 @@ Route::group(['prefix' => 'admins', 'middleware' => 'admin-check'], function()
 {
     Route::get('/home', 'RouteController@returnAdminHome')->name('admins.return_home');
     Route::get('students/logout', 'RouteController@adminLogout')->name('admins.do_logout');
+    Route::group(['prefix' => 'profile'], function() {
+        Route::get('/', 'RouteController@returnAdminProfile')->name('admins.return_profile');
+        
+    });
 });

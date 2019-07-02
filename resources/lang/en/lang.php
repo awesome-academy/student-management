@@ -28,7 +28,7 @@
         'email_password_incorrect' => 'Email or password is incorrect',
         'home' => 'Home page',
         'student_information' => 'Information',
-        'update_information' => 'Update information',
+        'update_information' => 'Update profile',
         'welcome' => 'Wellcome',
         'check_information' => 'Profile',
         'non_avatar' => 'No avatar to show',
@@ -135,4 +135,5 @@
         
         //ADMIN
         'admin_login' => 'Admin login',
+        'change_password' => 'Change password',
     ];

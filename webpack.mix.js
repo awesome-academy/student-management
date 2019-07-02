@@ -37,6 +37,7 @@ mix.styles([
     'resources/css/sb-admin-2.min.css',
     'resources/css/custom-font.css',
     'resources/css/admin-home.css',
+    'resources/css/admin-profile.css',
  ], 'public/css/admin.css');
 mix.scripts([
     'resources/js/sb-admin-2.min.js',
