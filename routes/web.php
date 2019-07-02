@@ -50,8 +50,8 @@ Route::get('admins/login', 'RouteController@returnAdminLogin')->name('admins.ret
 
 Route::post('admins/login', 'AdminLoginController@doAdminLogin')->name('admins.do_login');
 
-Route::group(['prefix' => 'admins'], function()
+Route::group(['prefix' => 'admins', 'middleware' => 'admin-check'], function()
 {
     Route::get('/home', 'RouteController@returnAdminHome')->name('admins.return_home');
-    
+    Route::get('students/logout', 'RouteController@adminLogout')->name('admins.do_logout');
 });

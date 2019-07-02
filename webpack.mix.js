@@ -31,6 +31,13 @@ mix.styles([
     'resources/css/view-schedule.css',
     'resources/css/view-point.css',
  ], 'public/css/home.css');
+mix.styles([
+    'resources/css/all.min.css',
+    'resources/css/font.css',
+    'resources/css/sb-admin-2.min.css',
+    'resources/css/custom-font.css',
+    'resources/css/admin-home.css',
+ ], 'public/css/admin.css');
 mix.scripts([
     'resources/js/sb-admin-2.min.js',
  ], 'public/js/app.js');
@@ -41,3 +48,7 @@ mix.scripts([
     'resources/js/subject-registration.js',
     'resources/js/view-schedule.js',
  ], 'public/js/home.js');
+mix.scripts([
+    'resources/js/sb-admin-2.min.js',
+    'resources/js/jquery.easing.min.js',
+ ], 'public/js/admin.js');
