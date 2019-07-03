@@ -2,12 +2,12 @@ $(document).ready(function() {
     $('#generation-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: '/admins/generation-management/generation-table-ajax',
+        ajax: $('#generationTableAjaxRoute').val(),
         columns: [
             { data: 'DT_RowIndex', orderable: false, searchable: false },
             { data: 'name' },
             { data: 'begin_year' },
-            { data: 'manager' },   
+            { data: 'manager' },
         ]
     });
 });

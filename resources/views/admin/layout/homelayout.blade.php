@@ -55,11 +55,11 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProfile" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-address-card font-size-20"></i>
                     <span>{{ __('lang.check_information') }}</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapseProfile" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('admins.return_profile') }}">{{ __('lang.check_information') }}</a>
                         <a class="collapse-item" href="#">{{ __('lang.update_information') }}</a>
@@ -68,9 +68,27 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admins.return_generation_management') }}">
-                    <i class="fas fa-user-edit font-size-20"></i>
+                    <i class="fas fa-tasks font-size-20"></i>
                     <span>{{ __('lang.student_generation_management') }}</span>
                 </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('student-management.index') }}">
+                    <i class="fas fa-user-edit font-size-20"></i>
+                    <span>{{ __('lang.student_management') }}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegistration" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-registered font-size-20"></i>
+                    <span>{{ __('lang.registration_management') }}</span>
+                </a>
+                <div id="collapseRegistration" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">{{ __('lang.registration_list') }}</a>
+                        <a class="collapse-item" href="#">{{ __('lang.open_registration') }}</a>
+                    </div>
+                </div>
             </li>
             
             <!-- Divider -->

@@ -8,12 +8,20 @@ use App\Sclass;
 use App\Student;
 use App\SubjectRegistration;
 use App\Generation;
+use App\Repositories\StudentRepository;
 
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Auth;
 
 class AjaxController extends Controller
 {
+    protected $studentRepository;
+
+    public function __construct(StudentRepository $studentRepository)
+    {
+        $this->studentRepository = $studentRepository;
+    }
+
     function getClassTable(Request $rq) {
         $id = $rq['value'];
         $classes = Subject::find($id)->getClass()->get();
@@ -78,6 +86,7 @@ class AjaxController extends Controller
     function getGenerationTable(Request $rq)
     {
         $generations = Generation::select(['id', 'name', 'begin_year']);
+
         return Datatables::of($generations)
             ->addIndexColumn()
             ->addColumn('manager', function($generations){
@@ -99,5 +108,27 @@ class AjaxController extends Controller
 
             echo json_encode($generation);
         }
+    }
+
+    function getStudentTable(Request $rq)
+    {
+        $students = $this->studentRepository->getAllInfo();
+
+        return Datatables::of($students)
+        ->addIndexColumn()
+        ->editColumn('avatar', function($students){
+            if (!empty($students->avatar)) {
+                return '<img class="avatar-column-size" src="' . config('social.student-img') . $students->avatar . '" alt="avatar"/>';
+            } else {
+                return '<img class="avatar-column-size" src="' . config('social.student-default-img') . '" alt="avatar"/>';
+            }
+        })
+        ->addColumn('manager', function($students){
+            return '<a href="' . route('student-management.edit', ['id' => $students->id]) . '"><button class="edit-button"><i class="fas fa-edit"></i></button></a>
+                <button class="delete-button" data-toggle="modal" data-target="#confirmDelete" data-whatever="' . 
+                    $students->id . '"><i class="fas fa-trash-alt"></i></button>';
+        })
+        ->rawColumns(['avatar','manager'])
+        ->toJson();
     }
 }

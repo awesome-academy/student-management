@@ -1,0 +1,21 @@
+.student-table-size {
+    width: 95%;
+    color: black;
+}
+.student-managerment-content-page-size {
+    width: 100%;
+    min-height: 850px;
+}
+.update-form-style {
+	width: 50%;
+	color: black;
+}
+.submit-style {
+	width: 200px;
+}
+.avatar-column-size {
+	max-width:100px;
+}
+.color-black {
+	color: black;
+}
