@@ -13,6 +13,7 @@ use App\SubjectRegistration;
 use App\Semester;
 use App\Lesson;
 use App\Day;
+use App\Generation;
 
 class RouteController extends Controller
 {
@@ -226,5 +227,10 @@ class RouteController extends Controller
     public function returnAdminProfile()
     {
         return view('admin/profile');
+    }
+
+    public function returnGenerationManagement()
+    {
+        return view('admin/generation-management');
     }
 }

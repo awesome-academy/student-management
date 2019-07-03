@@ -53,9 +53,24 @@ Route::post('admins/login', 'AdminLoginController@doAdminLogin')->name('admins.d
 Route::group(['prefix' => 'admins', 'middleware' => 'admin-check'], function()
 {
     Route::get('/home', 'RouteController@returnAdminHome')->name('admins.return_home');
-    Route::get('students/logout', 'RouteController@adminLogout')->name('admins.do_logout');
+    Route::get('/logout', 'RouteController@adminLogout')->name('admins.do_logout');
     Route::group(['prefix' => 'profile'], function() {
         Route::get('/', 'RouteController@returnAdminProfile')->name('admins.return_profile');
         
     });
+    Route::group(['prefix' => 'generation-management'], function()
+    {
+        Route::get('/', 'RouteController@returnGenerationManagement')
+            ->name('admins.return_generation_management');
+        Route::get('/generation-table-ajax', 'AjaxController@getGenerationTable')->name('admins.generation-table-ajax');
+        Route::get('/generation-modal-ajax', 'AjaxController@getGenerationModal')
+            ->name('admins.generation-modal-ajax');
+        Route::get('/add-generation', 'GenerationManagementController@addGeneration')
+            ->name('admins.add-generation');
+        Route::get('/update-generation/{id}', 'GenerationManagementController@updateGeneration')
+            ->name('admins.update-generation');
+        Route::get('/delete-generation/{id}', 'GenerationManagementController@deleteGeneration')
+            ->name('admins.delete-generation');
+    });
+    
 });

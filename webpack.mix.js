@@ -38,6 +38,7 @@ mix.styles([
     'resources/css/custom-font.css',
     'resources/css/admin-home.css',
     'resources/css/admin-profile.css',
+    'resources/css/admin-generation-managerment.css',
  ], 'public/css/admin.css');
 mix.scripts([
     'resources/js/sb-admin-2.min.js',
@@ -52,4 +53,5 @@ mix.scripts([
 mix.scripts([
     'resources/js/sb-admin-2.min.js',
     'resources/js/jquery.easing.min.js',
+    'resources/js/admin-generation-management.js',
  ], 'public/js/admin.js');
