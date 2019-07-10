@@ -136,4 +136,18 @@
         //ADMIN
         'admin_login' => 'Admin login',
         'change_password' => 'Change password',
+        'student_generation_management' => 'Student generation managerment',
+        'begin_year' => 'Begin year',
+        'generation_update' => 'Generation update',
+        'close' => 'Close',
+        'save' => 'Save',
+        'generation_name_exist' => 'Generation name is exist',
+        'delete_success' => 'Delete successfully',
+        'cannot_delete_now' => 'You can not delete this record now',
+        'add' => 'Add',
+        'add_success' => 'Add successfully',
+        'add_fail' => 'Add fail',
+        'generation_name_max' => 'Generation name max is 20 characters',
+        'generation_name_exist' => 'Generation name is exist',
+        'generation_begin_year_exist' => 'The begin year is exist',
     ];

@@ -133,4 +133,17 @@
         //ADMIN
         'admin_login' => 'Admin đăng nhập',
         'change_password' => 'Đổi mật khẩu',
+        'student_generation_management' => 'Quản lý khóa sinh viên',
+        'begin_year' => 'Năm bắt đầu',
+        'generation_update' => 'Cập nhật khóa sinh viên',
+        'close' => 'Đóng',
+        'save' => 'Lưu',
+        'generation_name_exist' => 'Tên đã tồn tại',
+        'delete_success' => 'Xóa thành công',
+        'cannot_delete_now' => 'Hiện tại bạn không thể xóa bản ghi này',
+        'add' => 'Thêm',
+        'add_success' => 'Thêm thành công',
+        'add_fail' => 'Thêm thất bại',
+        'generation_name_max' => 'Tên khóa sinh viên không đưọc quá 20 ký tự',
+        'generation_begin_year_exist' => 'Năm bắt đầu đã tồn tại',
     ];

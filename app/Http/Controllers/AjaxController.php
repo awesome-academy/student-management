@@ -7,6 +7,9 @@ use App\Subject;
 use App\Sclass;
 use App\Student;
 use App\SubjectRegistration;
+use App\Generation;
+
+use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Auth;
 
 class AjaxController extends Controller
@@ -70,6 +73,31 @@ class AjaxController extends Controller
 
         } else {
             echo null;
+        }
+    }
+    function getGenerationTable(Request $rq)
+    {
+        $generations = Generation::select(['id', 'name', 'begin_year']);
+        return Datatables::of($generations)
+            ->addIndexColumn()
+            ->addColumn('manager', function($generations){
+                return '<button class="edit-button" data-toggle="modal" data-target="#exampleModal" data-whatever="' . 
+                    $generations->id . '"><i class="fas fa-edit"></i></button>
+                    <button class="delete-button" onclick="deleteGeneration(' . 
+                    $generations->id . ')"><i class="fas fa-trash-alt"></i></button>';
+
+            })
+            ->rawColumns(['manager'])
+            ->toJson();
+    }
+
+    function getGenerationModal(Request $rq)
+    {
+        if ($rq->has('id')) {
+            $id = $rq['id'];
+            $generation = Generation::find($id);
+
+            echo json_encode($generation);
         }
     }
 }

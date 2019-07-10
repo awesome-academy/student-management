@@ -8,11 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @routes()
 
     <title>@yield('title')</title>
 
     <link href="{{ config('social.admin-css') }}" rel="stylesheet">
     <link href="{{ config('social.all-min-css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ config('social.datatable-css') }}">
 
 </head>
 
@@ -62,6 +65,12 @@
                         <a class="collapse-item" href="#">{{ __('lang.update_information') }}</a>
                     </div>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admins.return_generation_management') }}">
+                    <i class="fas fa-user-edit font-size-20"></i>
+                    <span>{{ __('lang.student_generation_management') }}</span>
+                </a>
             </li>
             
             <!-- Divider -->
@@ -137,7 +146,7 @@
     <script src="{{ config('social.bootstrap-bundle') }}"></script>
 
     <script src="{{ config('social.admin-js') }}"></script>
-
+    <script src="{{ config('social.datatable-js') }}"></script>
 </body>
 
 </html>

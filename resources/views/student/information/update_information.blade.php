@@ -38,12 +38,12 @@
                 </div>
                 <div>
                     @if (count($errors)>0)
-                            <div class="alert alert-danger text-center">
-                                @foreach ($errors->all() as $err)
-                                    {{ $err }}
-                                @endforeach
-                            </div>
-                        @endif
+                        <div class="alert alert-danger text-center">
+                            @foreach ($errors->all() as $err)
+                                {{ $err }}
+                            @endforeach
+                        </div>
+                    @endif
                     @if (session('notification'))
                         <div class="alert alert-danger text-center">
                             {{ session('notification') }}

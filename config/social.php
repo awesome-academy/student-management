@@ -19,4 +19,6 @@ return [
     'sb-admin' => 'SB Admin',
     'admin-css' => '/css/admin.css',
     'admin-js' => '/js/admin.js',
+    'datatable-css' => '//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css',
+    'datatable-js' => '//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js',
 ];
