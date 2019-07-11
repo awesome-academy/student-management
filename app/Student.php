@@ -12,7 +12,7 @@ class Student extends Model
         'id',
         'full_name',
         'birth',
-        'if_card',
+        'id_card',
         'phone',
         'avatar',
         'local_address',

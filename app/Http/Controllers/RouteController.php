@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
+use App\Repositories\StudentRepository;
+use App\Repositories\GenerationRepository;
+use App\Repositories\DepartmentRepository;
 use App\User;
 use App\Student;
 use App\RegistrationInformation;
@@ -17,6 +20,19 @@ use App\Generation;
 
 class RouteController extends Controller
 {
+    protected $studentRepository, $generationRepository, $departmentRepository;
+
+    public function __construct(
+        StudentRepository $studentRepository,
+        DepartmentRepository $departmentRepository,
+        GenerationRepository $generationRepository
+
+    ){
+        $this->studentRepository = $studentRepository;
+        $this->generationRepository = $generationRepository;
+        $this->departmentRepository = $departmentRepository;
+    }
+
     public function returnWelcome()
     {
         return view('welcome');
@@ -233,4 +249,5 @@ class RouteController extends Controller
     {
         return view('admin/generation-management');
     }
+
 }

@@ -9,7 +9,6 @@ use App\Repositories\GenerationRepository;
 use App\Http\Requests\AddGenerationValidation;
 use App\Http\Requests\UpdateGenerationValidation;
 
-
 class GenerationManagementController extends Controller
 {
     protected $generationRepository;

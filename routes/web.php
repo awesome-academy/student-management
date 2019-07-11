@@ -72,5 +72,18 @@ Route::group(['prefix' => 'admins', 'middleware' => 'admin-check'], function()
         Route::get('/delete-generation/{id}', 'GenerationManagementController@deleteGeneration')
             ->name('admins.delete-generation');
     });
+
+    Route::resource('student-management', 'StudentManageController')->only([
+        'index',
+        'create',
+        'store',
+        'edit',
+        'update',
+        'destroy',
+    ]);
+    Route::group(['prefix' => 'student-management'], function()
+    {
+        Route::get('/ajax', 'AjaxController@getStudentTable')->name('admins.student-management.ajax');
+    });
     
 });

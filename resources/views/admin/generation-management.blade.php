@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-
+    <input type="hidden" id="generationTableAjaxRoute" value="{{ route('admins.generation-table-ajax') }}">
     {{-- UpdateModal --}}
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -73,6 +73,7 @@
                 </div>
                 <div class="modal-body">
                     <form method="GET" id="updateForm">
+                        @csrf
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">{{ __('lang.generation') }}</label>
                             <input type="text" class="form-control" id="name" name="name" required>
@@ -103,6 +104,7 @@
                 </div>
                 <div class="modal-body">
                     <form method="GET" id="addForm" action="{{ route('admins.add-generation') }}">
+                        @csrf
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">{{ __('lang.generation') }}</label>
                             <input type="text" class="form-control" id="addName" name="name" required>
