@@ -85,7 +85,9 @@
                 </a>
                 <div id="collapseRegistration" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">{{ __('lang.registration_list') }}</a>
+                        <a class="collapse-item" href="{{ route('registration-management.index') }}">
+                            {{ __('lang.registration_list') }}
+                        </a>
                         <a class="collapse-item" href="#">{{ __('lang.open_registration') }}</a>
                     </div>
                 </div>

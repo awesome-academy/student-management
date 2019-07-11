@@ -21,4 +21,11 @@ return [
     'admin-js' => '/js/admin.js',
     'datatable-css' => '//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css',
     'datatable-js' => '//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js',
+    //Status
+    'active' => 1,
+    'disable' => 0,
+    //Time status
+    'waiting' => 0,
+    'in-time' => 1,
+    'out-of-time' => 2,
 ];

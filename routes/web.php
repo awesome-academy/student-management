@@ -81,9 +81,20 @@ Route::group(['prefix' => 'admins', 'middleware' => 'admin-check'], function()
         'update',
         'destroy',
     ]);
+
     Route::group(['prefix' => 'student-management'], function()
     {
         Route::get('/ajax', 'AjaxController@getStudentTable')->name('admins.student-management.ajax');
+    });
+    
+    Route::resource('registration-management', 'RegistrationManagementController')->only([
+        'index',
+        'show',
+    ]);
+    
+    Route::group(['prefix' => 'registration-management'], function()
+    {
+        Route::get('registration-table/ajax', 'AjaxController@getRegistrationTable')->name('admins.registration-management.ajax');
     });
     
 });

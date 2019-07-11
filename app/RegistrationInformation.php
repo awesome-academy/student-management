@@ -13,6 +13,7 @@ class RegistrationInformation extends Model
     const CREATED_AT = null;
     protected $fillable = [
         'id',
+        'name',
         'status',
         'time_begin',
         'date_begin',
@@ -37,7 +38,7 @@ class RegistrationInformation extends Model
 
     public function getDepartment()
     {
-        return $this->belongsTo('App\Department');
+        return $this->belongsTo('App\Department', 'department_id', 'id');
     }
 
     public function getSubjectRegistration()
@@ -63,5 +64,10 @@ class RegistrationInformation extends Model
     public function getSemester()
     {
         return $this->belongsTo('App\Semester', 'semester_id', 'id');
+    }
+
+    public function getAdmin()
+    {
+        return $this->belongsTo('App\Admin', 'admin_id', 'id');
     }
 }

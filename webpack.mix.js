@@ -40,6 +40,7 @@ mix.styles([
     'resources/css/admin-profile.css',
     'resources/css/admin-generation-management.css',
     'resources/css/student-management.css',
+    'resources/css/registration-management.css',
  ], 'public/css/admin.css');
 mix.scripts([
     'resources/js/sb-admin-2.min.js',
@@ -56,4 +57,5 @@ mix.scripts([
     'resources/js/jquery.easing.min.js',
     'resources/js/admin-generation-management.js',
     'resources/js/student-management.js',
+    'resources/js/registration-management.js',
  ], 'public/js/admin.js');
