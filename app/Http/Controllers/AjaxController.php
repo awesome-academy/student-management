@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateSemesterValidation;
 use App\Subject;
 use App\Sclass;
 use App\Student;
-use App\SubjectRegistration;
 use App\Generation;
+use App\RegistrationInformation;
 use App\Repositories\StudentRepository;
-
+use App\Repositories\RegistrationRepository;
+use App\Repositories\SemesterRepository;
+use App\Repositories\GenerationRepository;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,17 +20,28 @@ class AjaxController extends Controller
 {
     protected $studentRepository;
 
-    public function __construct(StudentRepository $studentRepository)
+    public function __construct(
+        GenerationRepository $generationRepository,
+        StudentRepository $studentRepository,
+        RegistrationRepository $registrationRepository,
+        SemesterRepository $semesterRepository
+    )
     {
+        $this->generationRepository = $generationRepository;
         $this->studentRepository = $studentRepository;
+        $this->registrationRepository = $registrationRepository;
+        $this->semesterRepository = $semesterRepository;
     }
 
     function getClassTable(Request $rq) {
         $id = $rq['value'];
-        $classes = Subject::find($id)->getClass()->get();
+        $classes = $this->studentRepository->find($id);
         try {
+            $stt = 0;
             foreach ($classes as $class) {
+                $stt ++;
                 $data[] = array(
+                    'stt' => $stt,
                     'id_class' => $class->id,
                     'subject' => $class->getSubject()->first()->name,
                     'group' => $class->class_group,
@@ -83,9 +97,10 @@ class AjaxController extends Controller
             echo null;
         }
     }
+
     function getGenerationTable(Request $rq)
     {
-        $generations = Generation::select(['id', 'name', 'begin_year']);
+        $generations = $this->generationRepository->getAll();
 
         return Datatables::of($generations)
             ->addIndexColumn()
@@ -104,7 +119,7 @@ class AjaxController extends Controller
     {
         if ($rq->has('id')) {
             $id = $rq['id'];
-            $generation = Generation::find($id);
+            $generation = $this->generationRepository->find($id);
 
             echo json_encode($generation);
         }
@@ -113,7 +128,6 @@ class AjaxController extends Controller
     function getStudentTable(Request $rq)
     {
         $students = $this->studentRepository->getAllInfo();
-
         return Datatables::of($students)
         ->addIndexColumn()
         ->editColumn('avatar', function($students){
@@ -130,5 +144,25 @@ class AjaxController extends Controller
         })
         ->rawColumns(['avatar','manager'])
         ->toJson();
+    }
+
+    function getRegistrationTable()
+    {
+        $registrations = $this->registrationRepository->getAllInfo();
+        
+        return registrationDatatable($registrations);
+    }
+
+    function createSemester(CreateSemesterValidation $rq)
+    {
+        $array = array(
+            'name' => $rq['name'],
+            'begin_date' => $rq['begin_date'],
+            'finish_date' => $rq['finish_date']
+        );
+        $semester = $this->semesterRepository->create($array);
+        $semester->success = __('lang.add_success');
+        
+        echo json_encode($semester);
     }
 }

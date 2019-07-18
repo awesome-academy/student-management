@@ -4,6 +4,7 @@ namespace App\Repositories;
 use App\Repositories\EloquentRepository;
 use Illuminate\Support\Facades\DB;
 use App\Student;
+use App\Generation;
 use App\GenerationRegistrationInformation;
 
 class GenerationRepository extends EloquentRepository
@@ -29,5 +30,12 @@ class GenerationRepository extends EloquentRepository
         }
 
         return $result;
+    }
+
+    public function paginate($number)
+    {
+        $generations = Generation::paginate($number);
+        
+        return $generations;
     }
 }

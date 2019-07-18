@@ -20,6 +20,7 @@ class StudentRepository extends EloquentRepository
     public function getAllInfo()
     {
         return DB::table('students')
+            ->orderBy('id', 'DESC')
             ->join('generations', 'students.generation_id', '=', 'generations.id')
             ->join('departments', 'students.department_id', '=', 'departments.id')
             ->select('students.*','generations.name AS generation_name', 'departments.name AS department_name')
