@@ -163,4 +163,28 @@
         'registration_management' => 'Registration management',
         'registration_list' => 'Registration list',
         'open_registration' => 'Open registration',
+        'name' => 'Name',
+        'time_begin' => 'Begin time',
+        'time_finish' => 'Finish time',
+        'min_credit' => 'Min credit',
+        'max_credit' => 'Max credit',
+        'admin' => 'Admin',
+        'time_status' => 'Time Status',
+        //Time status
+        'waiting_time' => 'Waiting....',
+        'in_time' => 'In time',
+        'out_of_time' => 'Out of time!',
+        //Status
+        'active' => 'Active',
+        'disable' => 'Disable',
+        //Tool
+        'activated' => 'Activated',
+        'view_detail' => 'View detail',
+        'delete' => 'Delete',
+        'update' => 'Update',
+        //
+        'show_registration' => 'Registration detail',
+        'registration_information' => 'Registration information',
+        'semester' => 'Semester',
+        'available_generation' => 'Available generation',
     ];

@@ -159,4 +159,28 @@
         'registration_management' => 'Quản lý đăng ký tín chỉ',
         'registration_list' => 'Danh sách các đăng ký',
         'open_registration' => 'Mở đăng ký',
+        'name' => 'Tên',
+        'time_begin' => 'Thời gian bắt đầu',
+        'time_finish' => 'Thời gian kết thúc',
+        'min_credit' => 'Số tín chỉ tối thiểu',
+        'max_credit' => 'Số tín chỉ tối đa',
+        'admin' => 'Quản trị viên',
+        'time_status' => 'Trạng thái thời gian',
+        //Time status
+        'waiting_time' => 'Đang chờ....',
+        'in_time' => 'Trong thời gian mở',
+        'out_of_time' => 'Đã hết thời gian!',
+        //Status
+        'active' => 'Hoạt động',
+        'disable' => 'Vô hiệu hóa',
+        //Tool
+        'activated' => 'Kích hoạt',
+        'view_detail' => 'Xem chi tiết',
+        'delete' => 'Xóa',
+        'update' => 'Cập nhật',
+        //
+        'registration_detail' => 'Chi tiết đăng ký',
+        'registration_information' => 'Thông tin đăng ký',
+        'semester' => 'Học kỳ',
+        'available_generation' => 'Khả dụng với các khóa',
     ];

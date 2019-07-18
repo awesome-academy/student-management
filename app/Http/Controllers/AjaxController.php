@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use App\Subject;
 use App\Sclass;
 use App\Student;
-use App\SubjectRegistration;
 use App\Generation;
+use App\RegistrationInformation;
 use App\Repositories\StudentRepository;
+use App\Repositories\RegistrationRepository;
 
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Auth;
@@ -17,9 +18,10 @@ class AjaxController extends Controller
 {
     protected $studentRepository;
 
-    public function __construct(StudentRepository $studentRepository)
+    public function __construct(StudentRepository $studentRepository, RegistrationRepository $registrationRepository)
     {
         $this->studentRepository = $studentRepository;
+        $this->registrationRepository = $registrationRepository;
     }
 
     function getClassTable(Request $rq) {
@@ -113,7 +115,6 @@ class AjaxController extends Controller
     function getStudentTable(Request $rq)
     {
         $students = $this->studentRepository->getAllInfo();
-
         return Datatables::of($students)
         ->addIndexColumn()
         ->editColumn('avatar', function($students){
@@ -130,5 +131,12 @@ class AjaxController extends Controller
         })
         ->rawColumns(['avatar','manager'])
         ->toJson();
+    }
+
+    function getRegistrationTable()
+    {
+        $registrations = $this->registrationRepository->getAllInfo();
+        
+        return registrationDatatable($registrations);
     }
 }
