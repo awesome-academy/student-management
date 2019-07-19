@@ -148,7 +148,61 @@
                     </div>
                         
                 </div>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <div class="card color-black width-70">
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="input-group col-md-7">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text color-black" for="inputGroupSelect01">
+                                            {{ __('lang.list_subjects') }}
+                                        </label>
+                                    </div>
+                                    <select class="custom-select color-black" id="inputSubjectSelect">
+                                        <option value="0" selected>{{ __('lang.select') }}</option>
+                                        @foreach ($registration->getSubject as $subject)
+                                            <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row justify-content-center">
+                                <caption><h4>{{ __('lang.class_list') }}</h4></caption>
+                                <table class="table color-black">
+                                    <thead class="background-color-blue">
+                                        <tr>
+                                            <th scope="col">{{ __('lang.ordinal_number') }}</th>
+                                            <th scope="col">{{ __('lang.subject') }}</th>
+                                            <th scope="col">{{ __('lang.teacher') }}</th>
+                                            <th scope="col">{{ __('lang.class_group') }}</th>
+                                            <th scope="col">{{ __('lang.class_room') }}</th>
+                                            <th scope="col">{{ __('lang.size') }}</th>
+                                            <th scope="col">{{ __('lang.lesson') }}</th>
+                                            <th scope="col">{{ __('lang.day') }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="registrationClassTable">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <a href="{{ route('registration-management.index') }}"
+                    class="btn btn-secondary submit-style">
+                        <i class="fas fa-backward"></i>
+                        {{ __('lang.back') }}
+                    </a>
+                </div>
             </div>
+
         </div>
     </div>
+    <br>
 @endsection

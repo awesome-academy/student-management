@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Repositories\StudentRepository;
 use App\Repositories\GenerationRepository;
 use App\Repositories\DepartmentRepository;
+use App\Repositories\RegistrationRepository;
+use App\Repositories\SubjectRepository;
 use App\User;
 use App\Student;
 use App\RegistrationInformation;
@@ -20,17 +22,20 @@ use App\Generation;
 
 class RouteController extends Controller
 {
-    protected $studentRepository, $generationRepository, $departmentRepository;
+    protected $studentRepository, $generationRepository, $departmentRepository, $registrationRepository;
 
     public function __construct(
         StudentRepository $studentRepository,
         DepartmentRepository $departmentRepository,
-        GenerationRepository $generationRepository
-
+        GenerationRepository $generationRepository,
+        RegistrationRepository $registrationRepository,
+        SubjectRepository $subjectRepository
     ){
         $this->studentRepository = $studentRepository;
         $this->generationRepository = $generationRepository;
         $this->departmentRepository = $departmentRepository;
+        $this->registrationRepository = $registrationRepository;
+        $this->subjectRepository = $subjectRepository;
     }
 
     public function returnWelcome()
@@ -248,6 +253,25 @@ class RouteController extends Controller
     public function returnGenerationManagement()
     {
         return view('admin/generation-management');
+    }
+
+    public function returnSelectSubject(Request $rq)
+    {
+        $id = $rq['id'];
+        $registration = $this->registrationRepository->find($id);
+        
+        if ($registration) {
+            $subjects = $this->subjectRepository->paginate(16);
+            $regisSubjects = $registration->getSubject()->get();
+            
+            return view('admin/registration-management/select-subject', compact(
+                'registration',
+                'subjects',
+                'regisSubjects'
+            ));
+        } else {
+            abort(404);
+        }    
     }
 
 }

@@ -90,11 +90,28 @@ Route::group(['prefix' => 'admins', 'middleware' => 'admin-check'], function()
     Route::resource('registration-management', 'RegistrationManagementController')->only([
         'index',
         'show',
+        'create',
+        'store',
     ]);
     
     Route::group(['prefix' => 'registration-management'], function()
     {
-        Route::get('registration-table/ajax', 'AjaxController@getRegistrationTable')->name('admins.registration-management.ajax');
+        Route::get('registration-table/ajax', 'AjaxController@getRegistrationTable')
+            ->name('admins.registration-management.ajax');
+        Route::post('index/ajax', 'AjaxController@getClassTable')
+            ->name('admins.registration-management.index.ajax');
+        Route::group(['prefix' => 'create'], function()     
+        {
+            Route::post('form-ajax', 'AjaxController@createSemester')
+                ->name('admins.registration-management.create.form-ajax');
+        });
+        Route::group(['prefix' => '{id}/select-subjects', 'middleware' => 'registration-check' ], function()     
+        {
+            Route::get('/', 'RouteController@returnSelectSubject')
+                ->name('admins.registration-management.select-subjects');
+            Route::post('/store', 'RegistrationManagementController@storeSubject')
+                ->name('admins.registration-management.select-subjects.store');
+        });
     });
     
 });

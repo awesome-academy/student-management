@@ -39,6 +39,11 @@
                         @endif
                         <input type="hidden" id="registrationTableAjaxRoute"
                         value="{{ route('admins.registration-management.ajax') }}">
+                        <div class="d-flex justify-content-center">
+                            <a href="{{ route('registration-management.create') }}" class="btn">
+                                <i class="fas fa-plus">{{ ' ' .  __('lang.add') }}</i>
+                            </a>
+                        </div>
                         <table id="registration-table" class="color-black">
                             <thead>
                                 <tr>
